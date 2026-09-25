@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://democraticrepublicofiran.org/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles-v12.css">
+  <link rel="stylesheet" href="assets/styles-v13.css">
 </head>
 <body>
   <header class="site-header">
@@ -46,20 +46,16 @@
             <span>OF IRAN</span>
           </h1>
           <div class="video-hero-rule" aria-hidden="true"></div>
-          <p class="video-hero-label">FEATURED VIDEO</p>
-          <p class="video-hero-person">Reza Pahlavi</p>
-          <p class="video-hero-description">Featured video from Reza Pahlavi's official website.</p>
-          <a class="video-hero-link" href="https://rezapahlavi.org/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
         </div>
 
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/ItUyR7NvcmA?rel=0"
-            title="Featured Reza Pahlavi video"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+        <div class="clean-video-player" id="cleanVideoPlayer">
+          <img
+            class="clean-video-poster"
+            src="https://i.ytimg.com/vi/ItUyR7NvcmA/maxresdefault.jpg"
+            alt="Reza Pahlavi video"
+          >
+          <div class="clean-video-shade" aria-hidden="true"></div>
+          <button class="clean-video-play" id="cleanVideoPlay" type="button" aria-label="Play video"></button>
         </div>
       </div>
     </section>
@@ -145,5 +141,27 @@
   </footer>
 
   <script src="assets/app-v6.js" defer></script>
+
+  <script>
+    (() => {
+      const button = document.getElementById("cleanVideoPlay");
+      const player = document.getElementById("cleanVideoPlayer");
+      if (!button || !player) return;
+
+      button.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.src =
+          "https://www.youtube-nocookie.com/embed/ItUyR7NvcmA" +
+          "?autoplay=1&controls=0&rel=0&modestbranding=1&playsinline=1" +
+          "&iv_load_policy=3&fs=0&disablekb=1";
+        iframe.title = "Reza Pahlavi video";
+        iframe.allow =
+          "autoplay; encrypted-media; picture-in-picture";
+        iframe.setAttribute("allowfullscreen", "");
+        player.replaceChildren(iframe);
+      });
+    })();
+  </script>
+
 </body>
 </html>
