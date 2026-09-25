@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T19:37:35.106503Z",
+  "updated_at": "2026-09-25T19:45:07.789642Z",
   "source": "Google News discovery with original publisher preview images",
   "queries": [
     {
@@ -58,10 +58,10 @@
     },
     {
       "id": "fcc0953c16b7753d",
-      "title": "U.S., Iran said to be exploring phased deal to open Hormuz - japantimes.co.jp",
+      "title": "U.S., Iran said to be exploring phased deal to open Hormuz - The Japan Times",
       "url": "https://www.japantimes.co.jp/news/2026/09/25/world/politics/hormuz-phased-reopening/",
       "google_news_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPa0tsOTVpcHV3X0ZjLXRlSmtSOU5kbzhJYkhJbGpvRVA3d1R4N2FtUUhWTEY2X0lPTGJNYWFhSWJPV29MQzY1Tzl2TGt3VjZ4OVFsaGtRTjZIQXZ4VFJPNTdTMVBfT05vRVl5NE5KdFpmMXJZMGsxa21CbWtfdXhmcnBGd2J0cUpCcDBHQQ?oc=5",
-      "source": "japantimes.co.jp",
+      "source": "The Japan Times",
       "source_url": "https://www.japantimes.co.jp/news/2026/09/25/world/politics/hormuz-phased-reopening/",
       "published": "2026-09-25T02:23:00Z",
       "category": "Economy",
@@ -95,13 +95,13 @@
     {
       "id": "5183d77ee2d6683d",
       "title": "Iran's Economy Dips Below Zero Across All Major Macroeconomic Indicators in Spring 2026 - Iran Focus",
-      "url": "https://iranfocus.com/economy/58961-irans-economy-dips-below-zero-across-all-major-macroeconomic-indicators-in-spring-2026/?amp",
-      "google_news_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUHlDN3FkalItX1o0c2xaUUlzZ0ZaZ0k3X1oxaE1FeThkTm9OcGlPUDVrZHEyck9YYmxOYkVybVlKMmpSX3hwR2lqN3drRmhoMWRQd29yWnNRZ2RlQmZVNUJla2M5VEpNSHhTYTNmcE04OFh0aU82Zk1ZWEE5TnNKUnMtZEZlMTdXaENpMGRNN2dHeUs3aWtlNlBJbXFiTlJFS3RHbGJNOVYwTGs1aGRnaDYtOGlnRGRDQk54MXpqZElOTjlyOEHSAcYBQVVfeXFMUFB5QzdxZGpSLV9aNHNsWlFJc2dGWmdJN19aMWhNRXk4ZE5vTnBpT1A1a2RxMnJPWGJsTmJFcm1ZSjJqUl94cEdpajd3a0ZoaDFkUHdvclpzUWdkZUJmVTVCZWtjOVRKTUh4U2EzZnBNODhYdGlPNmZNWVhBOU5zSlJzLWRGZTE3V2hDaTBkTTdnR3lLN2lrZTZQSW1xYk5SRUt0R2xiTTlWMExrNWhkZ2g2LThpZ0RkQ0JOeDF6amRJTk45cjhB?oc=5",
+      "url": "https://iranfocus.com/economy/58961-irans-economy-dips-below-zero-across-all-major-macroeconomic-indicators-in-spring-2026/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMjdYZ1ZyMjlXY2hVNEEtdUdpZkRnZkZiR0tHMXBvMWViUmJKOEtVOVA3TW5xQ2dScFQ2QW1jcFdJUG1BbHhCeUJjS0ktcEZWcWpsWFBuZTlrNUFTVEhOemhCa2EwdnJtRWctZnBoVTZTUkRXSDhfMkcwc1VEdkl3WDRMZ3cyQnV0Q1dPdVJBa2xqVWJMMDB3U0RRZmZVbTlSUC1RMHJKTG9oZDNfNnNQSnQwOUFhLXYtdUVBZGhMSmzSAcYBQVVfeXFMUFB5QzdxZGpSLV9aNHNsWlFJc2dGWmdJN19aMWhNRXk4ZE5vTnBpT1A1a2RxMnJPWGJsTmJFcm1ZSjJqUl94cEdpajd3a0ZoaDFkUHdvclpzUWdkZUJmVTVCZWtjOVRKTUh4U2EzZnBNODhYdGlPNmZNWVhBOU5zSlJzLWRGZTE3V2hDaTBkTTdnR3lLN2lrZTZQSW1xYk5SRUt0R2xiTTlWMExrNWhkZ2g2LThpZ0RkQ0JOeDF6amRJTk45cjhB?oc=5",
       "source": "Iran Focus",
-      "source_url": "https://iranfocus.com/economy/58961-irans-economy-dips-below-zero-across-all-major-macroeconomic-indicators-in-spring-2026/?amp",
+      "source_url": "https://iranfocus.com/economy/58961-irans-economy-dips-below-zero-across-all-major-macroeconomic-indicators-in-spring-2026/",
       "published": "2026-09-24T19:15:43Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
       "image_url": "https://iranfocus.com/wp-content/uploads/2019/11/Irans_economy_downfall.jpg"
     },
     {
@@ -139,6 +139,18 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/un-new-york-masoud-pezeshkian-speech-23092026.jpg"
+    },
+    {
+      "id": "2031cdff89e991ef",
+      "title": "UN Experts Demand End to Killings of Kurdish Kolbars and Baloch Sukhtbars - irannewsupdate.com",
+      "url": "https://irannewsupdate.com/news/human-rights/un-experts-demand-end-to-killings-of-kurdish-kolbars-and-baloch-sukhtbars/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOFpZM2wtOXNqQUR6RXVpQVU3VVBXYVNvM2RodFdhZjB4blJaQzViWHYwUm5kWjZUQVhuY1VOQU5EZGZ3NW5uNnhfdFBBWnR4VEgxY0tQSHltS21UbXNpWjJSQTNsU0dYNHp5cjU4UlpUblpwMlFfZVJyVVJ2Zl9YSmZGTllydDY0aGQ0U1FLUUgwSDVsQUZrZmV6dGtFU2NQVldTWUEzMGNUNEZldmdDVmxGd2JEdWo2RmVr0gG7AUFVX3lxTE44WlkzbC05c2pBRHpFdWlBVTdVUFdhU28zZGh0V2FmMHhuUlpDNWJYdjBSbmRaNlRBWG5jVU5BTkRkZnc1bm42eF90UEFadHhUSDFjS1BIeW1LbVRtc2laMlJBM2xTR1g0enlyNThSWlRuWnAyUV9lUnJVUnZmX1hKZkZOWXJ0NjRoZDRTUUtRSDBINWxBRmtmZXp0a0VTY1BWV1NZQTMwY1Q0RmV2Z0NWbEZ3YkR1ajZGZWs?oc=5",
+      "source": "irannewsupdate.com",
+      "source_url": "https://irannewsupdate.com/news/human-rights/un-experts-demand-end-to-killings-of-kurdish-kolbars-and-baloch-sukhtbars/",
+      "published": "2026-09-24T11:15:31Z",
+      "category": "Human Rights",
+      "query": "\"Iran human rights\"",
+      "image_url": "https://irannewsupdate.com/wp-content/uploads/2026/09/f19dc863-03be-4bae-8278-79bf835857af_690.jpg"
     },
     {
       "id": "a763a1b59bddc59f",
@@ -202,10 +214,10 @@
     },
     {
       "id": "972c1366ecbb3faa",
-      "title": "Article: Political Prisoner Arghavan Falahi at Risk of Execution After Supreme Court Confirmation - Iran Human Rights",
+      "title": "Article: Political Prisoner Arghavan Falahi at Risk of Execution After Supreme Court Confirmation - iranhr.net",
       "url": "https://iranhr.net/en/articles/9051/",
       "google_news_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBCS1hMS2JZaTdWVWZnQzNoTjgxWnF5UV9nMmhTTmVXcFFnYUswcDRPOVk2SnFNd016SHJ3eVVGR1hMOEpwaVFqYUZlQjg?oc=5",
-      "source": "Iran Human Rights",
+      "source": "iranhr.net",
       "source_url": "https://iranhr.net/en/articles/9051/",
       "published": "2026-09-23T13:17:33Z",
       "category": "Human Rights",
@@ -249,6 +261,18 @@
       "image_url": "https://bloximages.chicago2.vip.townnews.com/springfieldnewssun.com/content/tncms/assets/v3/editorial/7/b3/7b332fe3-9942-5e7e-a0d8-b578af598ed1/6a8e00503c954.image.jpg?crop=4703%2C2469%2C0%2C2292&resize=1200%2C630&order=crop%2Cresize"
     },
     {
+      "id": "4e922902159b0886",
+      "title": "Resistance Units Amplify Prisoners’ No to Executions Campaign Across Iran - irannewsupdate.com",
+      "url": "https://irannewsupdate.com/news/iranian-opposition/resistance-units-amplify-prisoners-no-to-executions-campaign-across-iran/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQU01IRjNWME9CMVNRaGo0ZG9uWnpxbHlDXzk4NkI4ZVR4RWFXSVhncEZ1YXJGek5pcE9CQndTVXpkVVFyU3pXTkdJMndwZUpRSUIwb0xQVDNXbzI0eXdfSGNxZFotS0VDakRBR2l5Qml5WndMUElpQ3hLY0pMeFJJN1JMdUpjaWZYRS00OVMyaGxrU1JhX0JWRTBESTZrV1BBNHdZTmFGeGdqUzd3X3VrWHI0X0c0ZTdLODZMMElxb1Qyd9IBwgFBVV95cUxQU01IRjNWME9CMVNRaGo0ZG9uWnpxbHlDXzk4NkI4ZVR4RWFXSVhncEZ1YXJGek5pcE9CQndTVXpkVVFyU3pXTkdJMndwZUpRSUIwb0xQVDNXbzI0eXdfSGNxZFotS0VDakRBR2l5Qml5WndMUElpQ3hLY0pMeFJJN1JMdUpjaWZYRS00OVMyaGxrU1JhX0JWRTBESTZrV1BBNHdZTmFGeGdqUzd3X3VrWHI0X0c0ZTdLODZMMElxb1Qydw?oc=5",
+      "source": "irannewsupdate.com",
+      "source_url": "https://irannewsupdate.com/news/iranian-opposition/resistance-units-amplify-prisoners-no-to-executions-campaign-across-iran/",
+      "published": "2026-09-23T07:25:31Z",
+      "category": "Human Rights",
+      "query": "\"Iran human rights\"",
+      "image_url": "https://irannewsupdate.com/wp-content/uploads/2026/09/Screenshot-2026-09-23-092321.png"
+    },
+    {
       "id": "8b1d0dd0084733ce",
       "title": "Bucharest Exhibition by MEK Supporters Denounces Iran Regime Executions and Rights Violations - Iran Freedom",
       "url": "https://iranfreedom.org/en/iranian-communities/2026/09/bucharest-exhibition-by-mek-supporters-denounces-iran-regime-executions-and-rights-violations/90989/",
@@ -274,10 +298,10 @@
     },
     {
       "id": "0e65491386f3e103",
-      "title": "Trump urges nations to unite against Iran in UN address - Jewish Telegraphic Agency",
+      "title": "Trump urges nations to unite against Iran in UN address - jta.org",
       "url": "https://www.jta.org/2026/09/22/global/trump-urges-nations-to-unite-against-iran-in-un-address",
       "google_news_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONGRHZjhLdzNmWnhpem5zcGJaNDA0YnFSeFJVT1ZxZmpVSFhRVUlkcFRQdW15c05iV3VEVHV4S2t0N1NlaXdhRHF3LVdhWE1FWFM5djlpTXY5b1RoV0R3SVdtcjFacGRZem1KUjNueGdjMU9fVmxLcjBmZWVMeGpwQllXYktyTWlieXNFakN0T0VWVU8xeUlscQ?oc=5",
-      "source": "Jewish Telegraphic Agency",
+      "source": "jta.org",
       "source_url": "https://www.jta.org/2026/09/22/global/trump-urges-nations-to-unite-against-iran-in-un-address",
       "published": "2026-09-22T20:33:25Z",
       "category": "Economy",
@@ -299,13 +323,13 @@
     {
       "id": "5207d7255258b066",
       "title": "Iran's Economy Crisis Under Strain of Capital Deterioration, Industrial Stagnation - Iran Focus",
-      "url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/?amp",
-      "google_news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTFZwUFR2ZnNoYlVSdUxmQ3RlYS1BczVhWTVCYWlVXzZSbVNPQ3V3Yk1SSThvM2k0YnZSRXQxX3RMbU5LN3hhU1IyVE45WDZhRmR1RTVoR2FZQmlOTElwSV95OXp3SF95em5jRVJmMWtTWEN5UGRYME1pZkEtb3BMZ1lRbEEwT0luWDhiWjJ4dUQyT0IxX1pjdllhYUtEQ0RHa1dndXkzbG1NTmI1UDRyOTBrSkRNOVphaVUxX0hR0gG-AUFVX3lxTFBMVnBQVHZmc2hiVVJ1TGZDdGVhLUFzNWFZNUJhaVVfNlJtU09DdXdiTVJJOG8zaTRidlJFdDFfdExtTks3eGFTUjJUTjlYNmFGZHVFNWhHYVlCaU5MSXBJX3k5endIX3l6bmNFUmYxa1NYQ3lQZFgwTWlmQS1vcExnWVFsQTBPSW5YOGJaMnh1RDJPQjFfWmN2WWFhS0RDREdrV2d1eTNsbU1OYjVQNHI5MGtKRE05WmFpVTFfSFE?oc=5",
+      "url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRk1FanlmdjduUWl0TVpPREhKbVFOamU4UVNYYURoZm9xNFhFWTNtTDdKWWJuTWhOUk95SFBZLUpveE16X1NyUGdyWGtQWXBFampaNGZ3UjBpWmdNdFpOLUhLSHpic2hyTGZ1Q0d6RXI4U0gyRE9iWmE5a1Vwa0JMMGQ5bFJJOWRqclYxdXg5N0M2N0tpWDM5dWhjbW4yX1BXd2lDR1ZBYmRKZUpTUHBObTlkeUFveVo50gG-AUFVX3lxTFBMVnBQVHZmc2hiVVJ1TGZDdGVhLUFzNWFZNUJhaVVfNlJtU09DdXdiTVJJOG8zaTRidlJFdDFfdExtTks3eGFTUjJUTjlYNmFGZHVFNWhHYVlCaU5MSXBJX3k5endIX3l6bmNFUmYxa1NYQ3lQZFgwTWlmQS1vcExnWVFsQTBPSW5YOGJaMnh1RDJPQjFfWmN2WWFhS0RDREdrV2d1eTNsbU1OYjVQNHI5MGtKRE05WmFpVTFfSFE?oc=5",
       "source": "Iran Focus",
-      "source_url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/?amp",
+      "source_url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/",
       "published": "2026-09-22T19:30:19Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
       "image_url": "https://iranfocus.com/wp-content/uploads/2023/08/World-Bank-Warns-About-Iran-Economy.jpg"
     },
     {
@@ -382,10 +406,10 @@
     },
     {
       "id": "d37736a228183374",
-      "title": "Political Prisoner Ali Zarei Douzdarehsi at Imminent Risk of Execution in Ghezelhesar Prison - Iran Human Rights",
+      "title": "Political Prisoner Ali Zarei Douzdarehsi at Imminent Risk of Execution in Ghezelhesar Prison - iranhr.net",
       "url": "https://iranhr.net/en/articles/9049/",
       "google_news_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1nX1lBVHBoazZ1bllVdlRBQ29fdE5OZkdmd2J6S1VQOUdzQk5KQzJjdF9INkNob0NwdlFpX19SaHR0dnlVN2dpU0hxOWU?oc=5",
-      "source": "Iran Human Rights",
+      "source": "iranhr.net",
       "source_url": "https://iranhr.net/en/articles/9049/",
       "published": "2026-09-22T09:03:19Z",
       "category": "Human Rights",
@@ -439,30 +463,6 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://thecradle-main.oss-eu-central-1.aliyuncs.com/public/articles/f61865d8-b5c3-11f1-a4e5-00163e02c055.webp"
-    },
-    {
-      "id": "67756a7aaa41ed3b",
-      "title": "Iran vows ‘painful’ retaliation as Trump piles on pressure ahead of UN General Assembly meeting - cnbcafrica.com",
-      "url": "https://www.cnbcafrica.com/2026/iran-vows-painful-retaliation-as-trump-piles-on-pressure-ahead-of-un-general-assembly-meeting",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaTZ2N3kzZXhUMnpud1AyM2cyTXlQd050aXhVMFU4VG12VDFMcG9UR2FoOG92c2RMbzBuQWFZYTlpS1JfR2VHbkVYT2t5a0pCZmNQYkZLMEJZOE9pU0JUVFZ0dVV1MUhUX0x6dTlZZTdrWFdvcFFkZ09iNl9mTE5BdDJtd2Z6MTFieDliRDEwcDRIZ2VtOEhHdENyQ1hnOUNrSHBEWGdDUzNub2NYdTFST3BoZ0JQOU1iR0pWVkVVMjFSOWc?oc=5",
-      "source": "cnbcafrica.com",
-      "source_url": "https://www.cnbcafrica.com/2026/iran-vows-painful-retaliation-as-trump-piles-on-pressure-ahead-of-un-general-assembly-meeting",
-      "published": "2026-09-21T13:26:51Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://cdn.cnbc.africa/wp-content/uploads/2026/09/108365162-17897625102026-09-18t194849z_1464701728_rc2vlnax1dr1_rtrmadp_0_usa-trump.jpg"
-    },
-    {
-      "id": "5c99f4d71121f493",
-      "title": "How oil, gas losses have shrunk Iran’s GDP by 10 percent during war - aljazeera.com",
-      "url": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcFNseXpCVmJUTWVPSTdnMG0yQUo1Zm5RQkVxM0dIVkxEOE5mYWxmcm1fSmNwekxacm83c3ctY21YVC1pb2FrUkhfQ0RTakRJb2d1S0hTSzVTNWNvc0tBSXBweUNSb3NJMXh6MVpuTUpwSEZtZW9PYWU3OVprMnhKNGQtdWtpZl9GWHhaVHJNNFdpZUtzTGJ1dEtWM2NING1JY004YTVsTFJmQdIBrwFBVV95cUxPam1TVjUtRDluV2pseWpDVVRUMFotNlFjVGtvWl8xUlNJODBocklZVDdFdExLYy1CNkszQkNDcmhzakFBLXFuVW1ob0I5ZUJybTdZTVd2d1NMc1BjRTNwMVdDRmpYRk56blBJR1BDcUU2eW9SN0ZwTDZ6QW1JWkZCQVVBeFdUT0huRHJIZzNMTnp4V3lMME93Z3ZON1dNVUY5OEo0WVVQUlgwdFB3a09j?oc=5",
-      "source": "aljazeera.com",
-      "source_url": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war",
-      "published": "2026-09-21T10:44:53Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://www.aljazeera.com/wp-content/uploads/2026/09/epa_6ab0e85b3c47-1789978715.jpg?resize=1920%2C1440"
     }
   ],
   "errors": [],
