@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T20:10:34.422584Z",
+  "updated_at": "2026-09-25T20:12:51.613030Z",
   "source": "Google News discovery with original publisher preview images",
   "queries": [
     {
@@ -32,6 +32,18 @@
     }
   ],
   "articles": [
+    {
+      "id": "16a57d7d80964993",
+      "title": "What will Iran look like in one year ? Eight guesses from foreign policy experts. - washingtonsun.com",
+      "url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
+      "google_news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSjkzSDZyMDhzYWczXzBOWG0wSDFsa3ZfSlhFc1ZOOEtueWlzdUU1OUNYVi02TGR5TWtaZGRuWHY4TGM0eHk5Vmt6X0J6MldseE9ROHJzWjlBNE40RHpuR2Vsb0RXTGdsRWJWQk42S1AzeFNZY21nT1lJQlVXQ2JzVXNkaVNPM3d6Z1dBd3VFRUZWaXNDVjRJWHBmU0ZrT00zTUwzWk0yaXRocXRpcF9pOTFKV0N4bjVGdG93VWdR?oc=5",
+      "source": "washingtonsun.com",
+      "source_url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
+      "published": "2026-09-25T18:47:05Z",
+      "category": "Democracy",
+      "query": "\"democratic Iran\"",
+      "image_url": "https://static.washingtonsun.com/dims4/default/c1664b7/2147483647/strip/true/crop/3447x1939+0+180/resize/1440x810!/quality/90/?url=https%3A%2F%2Fk2-prod-aji.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fec%2Fed%2F979b5ea14b8f9a8958526b82d4c8%2Firan-22187715707887.jpg"
+    },
     {
       "id": "a5c511247d71f280",
       "title": "Oil prices back up as U.S. and Iran trade fresh threats to expand 7-month war - CBS News",
@@ -141,6 +153,18 @@
       "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/un-new-york-masoud-pezeshkian-speech-23092026.jpg"
     },
     {
+      "id": "2031cdff89e991ef",
+      "title": "UN Experts Demand End to Killings of Kurdish Kolbars and Baloch Sukhtbars - irannewsupdate.com",
+      "url": "https://irannewsupdate.com/news/human-rights/un-experts-demand-end-to-killings-of-kurdish-kolbars-and-baloch-sukhtbars/?amp",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZVhmbHFKMmhldjd3QjVqZ0RpNFlsNzZIVGJYVlJ5YUR2R1JyRlY5WV96UlFVdG5zaWpNb3ZvcWZiV2VITWlZM2tsQ0trWHpHSVZTczRqdWswTXV1NWFjRy1hMDFaS1d1RXRsNFh3ckpRX2FEUE1IaFhDY3d4eF9LN0ZZQ3lvWlJKR19GWnFPZEt6X09wR3lwWHRLSzJkeXdSU2dMWDduQVNIUUgxYnZVeXNWako1RW1TQ0M3R1plWm7SAcABQVVfeXFMTmVYZmxxSjJoZXY3d0I1amdEaTRZbDc2SFRiWFZSeWFEdkdSckZWOVlfelJRVXRuc2lqTW92b3FmYldlSE1pWTNrbENLa1h6R0lWU3M0anVrME11dTVhY0ctYTAxWktXdUV0bDRYd3JKUV9hRFBNSGhYQ2N3eHhfSzdGWUN5b1pSSkdfRlpxT2RLel9PcEd5cFh0S0syZHl3UlNnTFg3bkFTSFFIMWJ2VXlzVmpKNUVtU0NDN0daZVpu?oc=5",
+      "source": "irannewsupdate.com",
+      "source_url": "https://irannewsupdate.com/news/human-rights/un-experts-demand-end-to-killings-of-kurdish-kolbars-and-baloch-sukhtbars/?amp",
+      "published": "2026-09-24T11:15:31Z",
+      "category": "Human Rights",
+      "query": "\"Iran human rights\"",
+      "image_url": "https://irannewsupdate.com/wp-content/uploads/2026/09/f19dc863-03be-4bae-8278-79bf835857af_690.jpg"
+    },
+    {
       "id": "a763a1b59bddc59f",
       "title": "War deepens Iran’s energy crunch ahead of winter - Iran International",
       "url": "https://www.iranintl.com/en/202609235230",
@@ -225,18 +249,6 @@
       "image_url": "https://middle-east-online.com/sites/default/files/styles/social_image/public/2026-09/1988.jpg?h=cc58a6fd&itok=Dja5b2E_"
     },
     {
-      "id": "16a57d7d80964993",
-      "title": "What will Iran look like in one year ? Eight guesses from foreign policy experts. - washingtonsun.com",
-      "url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
-      "google_news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSjkzSDZyMDhzYWczXzBOWG0wSDFsa3ZfSlhFc1ZOOEtueWlzdUU1OUNYVi02TGR5TWtaZGRuWHY4TGM0eHk5Vmt6X0J6MldseE9ROHJzWjlBNE40RHpuR2Vsb0RXTGdsRWJWQk42S1AzeFNZY21nT1lJQlVXQ2JzVXNkaVNPM3d6Z1dBd3VFRUZWaXNDVjRJWHBmU0ZrT00zTUwzWk0yaXRocXRpcF9pOTFKV0N4bjVGdG93VWdR?oc=5",
-      "source": "washingtonsun.com",
-      "source_url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
-      "published": "2026-09-23T07:57:42Z",
-      "category": "Democracy",
-      "query": "\"democratic Iran\"",
-      "image_url": "https://static.washingtonsun.com/dims4/default/c1664b7/2147483647/strip/true/crop/3447x1939+0+180/resize/1440x810!/quality/90/?url=https%3A%2F%2Fk2-prod-aji.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fec%2Fed%2F979b5ea14b8f9a8958526b82d4c8%2Firan-22187715707887.jpg"
-    },
-    {
       "id": "0d5f57da40320b2f",
       "title": "What's More Than 'Maximum'? Trump Faces Limits on Iran Sanctions. - Springfield News-Sun",
       "url": "https://www.springfieldnewssun.com/nation-world/whats-more-than-maximum-trump-faces-limits-on-iran-sanctions/image_7b332fe3-9942-5e7e-a0d8-b578af598ed1.html",
@@ -247,6 +259,18 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://bloximages.chicago2.vip.townnews.com/springfieldnewssun.com/content/tncms/assets/v3/editorial/7/b3/7b332fe3-9942-5e7e-a0d8-b578af598ed1/6a8e00503c954.image.jpg?crop=4703%2C2469%2C0%2C2292&resize=1200%2C630&order=crop%2Cresize"
+    },
+    {
+      "id": "4e922902159b0886",
+      "title": "Resistance Units Amplify Prisoners’ No to Executions Campaign Across Iran - irannewsupdate.com",
+      "url": "https://irannewsupdate.com/news/iranian-opposition/resistance-units-amplify-prisoners-no-to-executions-campaign-across-iran/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQU01IRjNWME9CMVNRaGo0ZG9uWnpxbHlDXzk4NkI4ZVR4RWFXSVhncEZ1YXJGek5pcE9CQndTVXpkVVFyU3pXTkdJMndwZUpRSUIwb0xQVDNXbzI0eXdfSGNxZFotS0VDakRBR2l5Qml5WndMUElpQ3hLY0pMeFJJN1JMdUpjaWZYRS00OVMyaGxrU1JhX0JWRTBESTZrV1BBNHdZTmFGeGdqUzd3X3VrWHI0X0c0ZTdLODZMMElxb1Qyd9IBwgFBVV95cUxQU01IRjNWME9CMVNRaGo0ZG9uWnpxbHlDXzk4NkI4ZVR4RWFXSVhncEZ1YXJGek5pcE9CQndTVXpkVVFyU3pXTkdJMndwZUpRSUIwb0xQVDNXbzI0eXdfSGNxZFotS0VDakRBR2l5Qml5WndMUElpQ3hLY0pMeFJJN1JMdUpjaWZYRS00OVMyaGxrU1JhX0JWRTBESTZrV1BBNHdZTmFGeGdqUzd3X3VrWHI0X0c0ZTdLODZMMElxb1Qydw?oc=5",
+      "source": "irannewsupdate.com",
+      "source_url": "https://irannewsupdate.com/news/iranian-opposition/resistance-units-amplify-prisoners-no-to-executions-campaign-across-iran/",
+      "published": "2026-09-23T07:25:31Z",
+      "category": "Human Rights",
+      "query": "\"Iran human rights\"",
+      "image_url": "https://irannewsupdate.com/wp-content/uploads/2026/09/Screenshot-2026-09-23-092321.png"
     },
     {
       "id": "8b1d0dd0084733ce",
@@ -299,13 +323,13 @@
     {
       "id": "5207d7255258b066",
       "title": "Iran's Economy Crisis Under Strain of Capital Deterioration, Industrial Stagnation - Iran Focus",
-      "url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/?amp",
-      "google_news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTFZwUFR2ZnNoYlVSdUxmQ3RlYS1BczVhWTVCYWlVXzZSbVNPQ3V3Yk1SSThvM2k0YnZSRXQxX3RMbU5LN3hhU1IyVE45WDZhRmR1RTVoR2FZQmlOTElwSV95OXp3SF95em5jRVJmMWtTWEN5UGRYME1pZkEtb3BMZ1lRbEEwT0luWDhiWjJ4dUQyT0IxX1pjdllhYUtEQ0RHa1dndXkzbG1NTmI1UDRyOTBrSkRNOVphaVUxX0hR0gG-AUFVX3lxTFBMVnBQVHZmc2hiVVJ1TGZDdGVhLUFzNWFZNUJhaVVfNlJtU09DdXdiTVJJOG8zaTRidlJFdDFfdExtTks3eGFTUjJUTjlYNmFGZHVFNWhHYVlCaU5MSXBJX3k5endIX3l6bmNFUmYxa1NYQ3lQZFgwTWlmQS1vcExnWVFsQTBPSW5YOGJaMnh1RDJPQjFfWmN2WWFhS0RDREdrV2d1eTNsbU1OYjVQNHI5MGtKRE05WmFpVTFfSFE?oc=5",
+      "url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRk1FanlmdjduUWl0TVpPREhKbVFOamU4UVNYYURoZm9xNFhFWTNtTDdKWWJuTWhOUk95SFBZLUpveE16X1NyUGdyWGtQWXBFampaNGZ3UjBpWmdNdFpOLUhLSHpic2hyTGZ1Q0d6RXI4U0gyRE9iWmE5a1Vwa0JMMGQ5bFJJOWRqclYxdXg5N0M2N0tpWDM5dWhjbW4yX1BXd2lDR1ZBYmRKZUpTUHBObTlkeUFveVo50gG-AUFVX3lxTFBMVnBQVHZmc2hiVVJ1TGZDdGVhLUFzNWFZNUJhaVVfNlJtU09DdXdiTVJJOG8zaTRidlJFdDFfdExtTks3eGFTUjJUTjlYNmFGZHVFNWhHYVlCaU5MSXBJX3k5endIX3l6bmNFUmYxa1NYQ3lQZFgwTWlmQS1vcExnWVFsQTBPSW5YOGJaMnh1RDJPQjFfWmN2WWFhS0RDREdrV2d1eTNsbU1OYjVQNHI5MGtKRE05WmFpVTFfSFE?oc=5",
       "source": "Iran Focus",
-      "source_url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/?amp",
+      "source_url": "https://iranfocus.com/economy/58944-irans-economy-crisis-under-strain-of-capital-deterioration-industrial-stagnation/",
       "published": "2026-09-22T19:30:19Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
       "image_url": "https://iranfocus.com/wp-content/uploads/2023/08/World-Bank-Warns-About-Iran-Economy.jpg"
     },
     {
@@ -439,30 +463,6 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://thecradle-main.oss-eu-central-1.aliyuncs.com/public/articles/f61865d8-b5c3-11f1-a4e5-00163e02c055.webp"
-    },
-    {
-      "id": "67756a7aaa41ed3b",
-      "title": "Iran vows ‘painful’ retaliation as Trump piles on pressure ahead of UN General Assembly meeting - CNBC Africa",
-      "url": "https://www.cnbcafrica.com/2026/iran-vows-painful-retaliation-as-trump-piles-on-pressure-ahead-of-un-general-assembly-meeting",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaTZ2N3kzZXhUMnpud1AyM2cyTXlQd050aXhVMFU4VG12VDFMcG9UR2FoOG92c2RMbzBuQWFZYTlpS1JfR2VHbkVYT2t5a0pCZmNQYkZLMEJZOE9pU0JUVFZ0dVV1MUhUX0x6dTlZZTdrWFdvcFFkZ09iNl9mTE5BdDJtd2Z6MTFieDliRDEwcDRIZ2VtOEhHdENyQ1hnOUNrSHBEWGdDUzNub2NYdTFST3BoZ0JQOU1iR0pWVkVVMjFSOWc?oc=5",
-      "source": "CNBC Africa",
-      "source_url": "https://www.cnbcafrica.com/2026/iran-vows-painful-retaliation-as-trump-piles-on-pressure-ahead-of-un-general-assembly-meeting",
-      "published": "2026-09-21T13:26:51Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://cdn.cnbc.africa/wp-content/uploads/2026/09/108365162-17897625102026-09-18t194849z_1464701728_rc2vlnax1dr1_rtrmadp_0_usa-trump.jpg"
-    },
-    {
-      "id": "5c99f4d71121f493",
-      "title": "How oil, gas losses have shrunk Iran’s GDP by 10 percent during war - Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcFNseXpCVmJUTWVPSTdnMG0yQUo1Zm5RQkVxM0dIVkxEOE5mYWxmcm1fSmNwekxacm83c3ctY21YVC1pb2FrUkhfQ0RTakRJb2d1S0hTSzVTNWNvc0tBSXBweUNSb3NJMXh6MVpuTUpwSEZtZW9PYWU3OVprMnhKNGQtdWtpZl9GWHhaVHJNNFdpZUtzTGJ1dEtWM2NING1JY004YTVsTFJmQdIBrwFBVV95cUxPam1TVjUtRDluV2pseWpDVVRUMFotNlFjVGtvWl8xUlNJODBocklZVDdFdExLYy1CNkszQkNDcmhzakFBLXFuVW1ob0I5ZUJybTdZTVd2d1NMc1BjRTNwMVdDRmpYRk56blBJR1BDcUU2eW9SN0ZwTDZ6QW1JWkZCQVVBeFdUT0huRHJIZzNMTnp4V3lMME93Z3ZON1dNVUY5OEo0WVVQUlgwdFB3a09j?oc=5",
-      "source": "Al Jazeera",
-      "source_url": "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war",
-      "published": "2026-09-21T10:44:53Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://www.aljazeera.com/wp-content/uploads/2026/09/epa_6ab0e85b3c47-1789978715.jpg?resize=1920%2C1440"
     }
   ],
   "errors": [],
