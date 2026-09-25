@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+"""
+V8 updater: restore the image-fetching approach that previously produced real
+article photos, while keeping the newer clean frontend/layout.
+
+Key safeguards:
+- Decode Google News links ONE AT A TIME (the earlier working approach).
+- Pull og:image / twitter:image / JSON-LD image from the publisher page.
+- Publish ONLY articles with real external images.
+- Never overwrite a previously good feed with an empty/broken run.
+"""
+
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -6,7 +17,6 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from html.parser import HTMLParser
-from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlencode, urljoin
 from urllib.request import Request, urlopen
@@ -33,43 +43,30 @@ FEEDS = [
 
 BASE = "https://news.google.com/rss/search"
 EDITION = {"hl": "en-US", "gl": "US", "ceid": "US:en"}
-MEDIA_NS = "http://search.yahoo.com/mrss/"
 
-MAX_PER_FEED = 35
-MAX_CANDIDATES = 130
-TARGET_ARTICLES = 45
-MAX_WORKERS = 8
-TIMEOUT = 12
-MAX_IMAGE_BYTES = 8_000_000
+MAX_PER_FEED = 28
+MAX_CANDIDATES = 70
+TARGET_ARTICLES = 36
+MAX_WORKERS = 6
+TIMEOUT = 14
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
 )
 
-def ensure_dependencies():
-    try:
-        from PIL import Image
-    except ImportError:
-        subprocess.check_call([
-            sys.executable, "-m", "pip", "install",
-            "--disable-pip-version-check", "Pillow>=10,<12"
-        ])
-        from PIL import Image
-
+def get_decoder():
     try:
         from googlenewsdecoder import gnewsdecoder
+        return gnewsdecoder
     except ImportError:
-        try:
-            subprocess.check_call([
-                sys.executable, "-m", "pip", "install",
-                "--disable-pip-version-check", "googlenewsdecoder==0.2.1"
-            ])
-            from googlenewsdecoder import gnewsdecoder
-        except Exception:
-            gnewsdecoder = None
-
-    return Image, gnewsdecoder
+        print("Installing Google News URL decoder...")
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install",
+            "--disable-pip-version-check", "googlenewsdecoder==0.2.1"
+        ])
+        from googlenewsdecoder import gnewsdecoder
+        return gnewsdecoder
 
 def clean(text: str | None) -> str:
     if not text:
@@ -91,72 +88,6 @@ def parse_date(value: str) -> datetime:
         return dt.astimezone(timezone.utc)
     except Exception:
         return datetime.now(timezone.utc)
-
-def normalize_image_url(value: str) -> str:
-    value = unescape((value or "").strip())
-    if value.startswith("//"):
-        value = "https:" + value
-    return value if value.startswith(("https://", "http://")) else ""
-
-class DescriptionImageParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.images = []
-
-    def handle_starttag(self, tag, attrs):
-        if tag.lower() != "img":
-            return
-        attrs = {str(k).lower(): v for k, v in attrs if k and v}
-        for key in ("src", "data-src", "data-original", "data-lazy-src"):
-            value = normalize_image_url(attrs.get(key, ""))
-            if value:
-                self.images.append(value)
-
-def rss_image_candidates(item: ET.Element) -> list[str]:
-    candidates = []
-
-    for tag in (
-        f"{{{MEDIA_NS}}}content",
-        f"{{{MEDIA_NS}}}thumbnail",
-    ):
-        for node in item.findall(tag):
-            value = normalize_image_url(node.attrib.get("url", ""))
-            if value:
-                candidates.append(value)
-
-    for node in item.findall("enclosure"):
-        if "image" in (node.attrib.get("type") or "").lower():
-            value = normalize_image_url(node.attrib.get("url", ""))
-            if value:
-                candidates.append(value)
-
-    description = item.findtext("description") or ""
-    if description:
-        parser = DescriptionImageParser()
-        try:
-            parser.feed(description)
-            candidates.extend(parser.images)
-        except Exception:
-            pass
-
-        for match in re.findall(r"(?:src|data-src)=[\"']([^\"']+)[\"']", description, re.I):
-            value = normalize_image_url(match)
-            if value:
-                candidates.append(value)
-
-    output, seen = [], set()
-    for value in candidates:
-        if value in seen:
-            continue
-        seen.add(value)
-        lower = value.lower()
-        if any(token in lower for token in (
-            "favicon", "sprite", "avatar", "tracking", "pixel.", "logo", "placeholder"
-        )):
-            continue
-        output.append(value)
-
-    return output[:10]
 
 def fetch_feed(category: str, query: str) -> list[dict]:
     params = dict(EDITION)
@@ -196,7 +127,6 @@ def fetch_feed(category: str, query: str) -> list[dict]:
             "published": parse_date(pub).isoformat().replace("+00:00", "Z"),
             "category": category,
             "query": query.replace(" when:7d", ""),
-            "rss_image_candidates": rss_image_candidates(item),
             "image_url": "",
         })
 
@@ -284,244 +214,235 @@ class PreviewParser(HTMLParser):
             for child in value:
                 self._walk(child)
 
-def publisher_image_candidates(article_url: str) -> list[str]:
+def decode_one(gnewsdecoder, google_url: str) -> str:
+    """
+    Deliberately use the simple per-URL call that worked in the earlier version.
+    No batch/concurrency arguments are passed into the decoder itself.
+    """
+    try:
+        result = gnewsdecoder(google_url, interval=None)
+        if not isinstance(result, dict):
+            return ""
+
+        direct = result.get("decoded_url") or ""
+        status = result.get("status", result.get("success"))
+
+        if direct and status is not False and direct.startswith(("http://", "https://")):
+            return direct
+    except Exception as exc:
+        print(f"Decode failed: {type(exc).__name__}: {exc}")
+
+    return ""
+
+def get_preview_image(article_url: str) -> str:
     try:
         req = Request(article_url, headers={
             "User-Agent": USER_AGENT,
             "Accept": "text/html,application/xhtml+xml",
             "Accept-Language": "en-US,en;q=0.9",
         })
+
         with urlopen(req, timeout=TIMEOUT) as response:
             if "html" not in (response.headers.get("Content-Type") or "").lower():
-                return []
+                return ""
 
             final_url = response.geturl()
-            html = response.read(1_400_000).decode("utf-8", "ignore")
+            html = response.read(1_250_000).decode("utf-8", "ignore")
+
     except Exception:
-        return []
+        return ""
 
     parser = PreviewParser()
+
     try:
         parser.feed(html)
     except Exception:
-        return []
+        return ""
 
     base = parser.base_href or final_url
-    output, seen = [], set()
+    seen = set()
 
     for candidate in parser.images:
-        candidate = normalize_image_url(urljoin(base, str(candidate).strip()))
-        if not candidate or candidate in seen:
+        candidate = unescape(str(candidate).strip())
+        if not candidate:
             continue
-        seen.add(candidate)
 
-        lower = candidate.lower()
+        absolute = urljoin(base, candidate)
+
+        if absolute in seen:
+            continue
+        seen.add(absolute)
+
+        if not absolute.startswith(("http://", "https://")):
+            continue
+
+        lower = absolute.lower()
         if any(token in lower for token in (
             "favicon", "sprite", "avatar", "tracking", "pixel.",
-            "/logo.", "/logos/", "default-image", "placeholder"
+            "/logo.", "/logos/", "placeholder", "default-image"
         )):
             continue
 
-        output.append(candidate)
-
-    return output[:8]
-
-def validate_remote_image(url: str, Image):
-    try:
-        req = Request(url, headers={
-            "User-Agent": USER_AGENT,
-            "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        })
-
-        with urlopen(req, timeout=TIMEOUT) as response:
-            content_type = (response.headers.get("Content-Type") or "").lower()
-            if "image/" not in content_type:
-                return None
-
-            content_length = response.headers.get("Content-Length")
-            if content_length and int(content_length) > MAX_IMAGE_BYTES:
-                return None
-
-            data = response.read(MAX_IMAGE_BYTES + 1)
-
-        if len(data) > MAX_IMAGE_BYTES or len(data) < 8_000:
-            return None
-
-        with Image.open(BytesIO(data)) as im:
-            width, height = im.size
-
-        if width < 300 or height < 160:
-            return None
-
-        ratio = width / max(height, 1)
-        if ratio < 1.05 or ratio > 3.0:
-            return None
-
-        return {
-            "url": url,
-            "sha1": hashlib.sha1(data).hexdigest(),
-            "width": width,
-            "height": height,
-        }
-
-    except Exception:
-        return None
-
-def try_decode(article, gnewsdecoder):
-    if not gnewsdecoder:
-        return ""
-
-    try:
-        result = gnewsdecoder(
-            article["google_news_url"],
-            interval=0.25,
-            timeout=15.0,
-        )
-
-        if isinstance(result, dict):
-            ok = result.get("success")
-            if ok is None:
-                ok = result.get("status")
-
-            direct = result.get("decoded_url")
-            if ok is not False and direct and direct.startswith(("http://", "https://")):
-                return direct
-
-    except Exception:
-        pass
+        return absolute
 
     return ""
 
-def main():
-    Image, gnewsdecoder = ensure_dependencies()
+def load_previous():
+    if not OUT.exists():
+        return {"articles": []}
 
-    candidates = []
-    feed_errors = []
+    try:
+        return json.loads(OUT.read_text(encoding="utf-8"))
+    except Exception:
+        return {"articles": []}
+
+def previous_good_articles(previous):
+    output = []
+    seen = set()
+
+    for article in previous.get("articles", []):
+        image = article.get("image_url", "")
+        if not image or image in seen:
+            continue
+        seen.add(image)
+        output.append(article)
+
+    return output
+
+def main():
+    gnewsdecoder = get_decoder()
+    previous = load_previous()
+    old_good = previous_good_articles(previous)
+
+    collected = []
+    errors = []
 
     for category, query in FEEDS:
         try:
-            candidates.extend(fetch_feed(category, query))
+            collected.extend(fetch_feed(category, query))
         except Exception as exc:
-            feed_errors.append(f"{category}: {exc}")
+            errors.append(f"{category}: {exc}")
 
         time.sleep(0.25)
 
-    candidates.sort(key=lambda a: a["published"], reverse=True)
+    collected.sort(key=lambda a: a["published"], reverse=True)
 
-    seen_titles, seen_google_urls, deduped = set(), set(), []
+    seen_titles = set()
+    seen_google = set()
+    candidates = []
 
-    for article in candidates:
+    for article in collected:
         title_key = normalized_title(article["title"])
         google_key = article["google_news_url"]
 
-        if (title_key and title_key in seen_titles) or google_key in seen_google_urls:
+        if (title_key and title_key in seen_titles) or google_key in seen_google:
             continue
 
         if title_key:
             seen_titles.add(title_key)
 
-        seen_google_urls.add(google_key)
-        deduped.append(article)
+        seen_google.add(google_key)
+        candidates.append(article)
 
-        if len(deduped) >= MAX_CANDIDATES:
+        if len(candidates) >= MAX_CANDIDATES:
             break
 
-    def enrich(article):
-        # Primary path: use real imagery already exposed by the Google News RSS item.
-        for candidate in article.get("rss_image_candidates", []):
-            valid = validate_remote_image(candidate, Image)
-            if valid:
-                return article["id"], "", valid, "rss"
+    # Step 1: decode URLs serially using the earlier reliable call signature.
+    resolved = []
 
-        # Secondary path: decode the Google wrapper and inspect the original publisher page.
-        direct = try_decode(article, gnewsdecoder)
+    for idx, article in enumerate(candidates, 1):
+        direct = decode_one(gnewsdecoder, article["google_news_url"])
 
         if direct:
-            for candidate in publisher_image_candidates(direct):
-                valid = validate_remote_image(candidate, Image)
-                if valid:
-                    return article["id"], direct, valid, "publisher"
+            article = article.copy()
+            article["url"] = direct
+            article["source_url"] = direct
+            resolved.append(article)
 
-        return article["id"], direct, None, "none"
+        print(f"Decoded {idx}/{len(candidates)} | successes: {len(resolved)}")
 
-    results = {}
+        if len(resolved) >= TARGET_ARTICLES * 2:
+            break
+
+    # Step 2: scrape preview images concurrently from the resolved publisher pages.
+    def enrich(article):
+        return article["id"], get_preview_image(article["url"])
+
+    image_map = {}
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         futures = {
             pool.submit(enrich, article): article["id"]
-            for article in deduped
+            for article in resolved
         }
 
         for future in as_completed(futures):
+            article_id = futures[future]
             try:
-                article_id, direct, image, origin = future.result()
-                results[article_id] = {
-                    "direct_url": direct,
-                    "image": image,
-                    "origin": origin,
-                }
+                _, image = future.result()
+                if image:
+                    image_map[article_id] = image
             except Exception:
                 pass
 
     final_articles = []
-    seen_image_hashes = set()
-    seen_image_urls = set()
+    seen_images = set()
 
-    rss_image_count = 0
-    publisher_image_count = 0
-    decoded_count = 0
+    for article in resolved:
+        image = image_map.get(article["id"], "")
 
-    for article in deduped:
-        result = results.get(article["id"], {})
-        image = result.get("image")
-
-        if not image:
+        if not image or image in seen_images:
             continue
 
-        if image["sha1"] in seen_image_hashes or image["url"] in seen_image_urls:
-            continue
-
-        seen_image_hashes.add(image["sha1"])
-        seen_image_urls.add(image["url"])
+        seen_images.add(image)
 
         article = article.copy()
-        article.pop("rss_image_candidates", None)
-
-        if result.get("direct_url"):
-            article["url"] = result["direct_url"]
-            article["source_url"] = result["direct_url"]
-            decoded_count += 1
-
-        article["image_url"] = image["url"]
-        article["image_width"] = image["width"]
-        article["image_height"] = image["height"]
-        article["image_origin"] = result.get("origin", "unknown")
-
-        if article["image_origin"] == "rss":
-            rss_image_count += 1
-        elif article["image_origin"] == "publisher":
-            publisher_image_count += 1
-
+        article["image_url"] = image
         final_articles.append(article)
 
         if len(final_articles) >= TARGET_ARTICLES:
             break
 
+    print(f"Candidates: {len(candidates)}")
+    print(f"Publisher URLs resolved: {len(resolved)}")
+    print(f"Real unique publisher images found: {len(final_articles)}")
+
+    # Critical safety net: never turn a working site into a blank one again.
+    if not final_articles:
+        if old_good:
+            print(
+                f"WARNING: New run found 0 usable images. "
+                f"Keeping previous {len(old_good)} image-backed stories instead."
+            )
+            return
+
+        print(
+            "ERROR: New run found 0 usable images and there is no previous good feed. "
+            "news.json was NOT overwritten."
+        )
+        sys.exit(1)
+
+    # If a later run is abnormally weak, preserve a clearly better prior feed.
+    if old_good and len(final_articles) < 5 and len(old_good) > len(final_articles):
+        print(
+            f"WARNING: New run produced only {len(final_articles)} image-backed stories. "
+            f"Keeping previous {len(old_good)}-story feed."
+        )
+        return
+
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        "source": "Google News discovery using real RSS/publisher article imagery",
+        "source": "Google News discovery with original publisher preview images",
         "queries": [
             {"category": category, "query": query.replace(" when:7d", "")}
             for category, query in FEEDS
         ],
         "articles": final_articles,
-        "errors": feed_errors,
+        "errors": errors,
         "stats": {
-            "candidates": len(deduped),
-            "published_articles": len(final_articles),
-            "rss_images_used": rss_image_count,
-            "publisher_images_used": publisher_image_count,
-            "publisher_urls_decoded": decoded_count,
+            "candidates": len(candidates),
+            "publisher_urls_resolved": len(resolved),
+            "articles_with_real_unique_images": len(final_articles),
         },
     }
 
@@ -531,19 +452,7 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"Candidates: {len(deduped)}")
-    print(f"Published articles with unique real images: {len(final_articles)}")
-    print(f"Images obtained directly from Google News RSS: {rss_image_count}")
-    print(f"Images obtained from publisher metadata: {publisher_image_count}")
-    print(f"Publisher URLs decoded: {decoded_count}")
-
-    if not final_articles:
-        print("WARNING: No image-qualified stories were found in this run.")
-
-    if feed_errors:
-        print("Feed notices:")
-        for error in feed_errors:
-            print(" -", error)
+    print(f"Published {len(final_articles)} real-image stories.")
 
 if __name__ == "__main__":
     main()
