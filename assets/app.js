@@ -43,17 +43,26 @@ const relativeTime = (dateString) => {
   return date.toLocaleDateString(undefined, {month:"short", day:"numeric", year:"numeric"});
 };
 
-const visual = (category) => `
-  <div class="visual" aria-hidden="true">
-    <div class="visual-mark">${escapeHTML(category || "Iran")}</div>
-  </div>`;
+const visual = (a, size = "card") => {
+  const category = escapeHTML(a.category || "Iran");
+  const image = a.image_url ? safeURL(a.image_url) : "";
+  const imageMarkup = image !== "#"
+    ? `<img src="${image}" alt="" loading="${size === "lead" ? "eager" : "lazy"}" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();this.parentElement.classList.add('image-failed')">`
+    : "";
+  return `
+    <div class="visual ${image ? "has-image" : "image-failed"}" aria-hidden="true">
+      ${imageMarkup}
+      <div class="visual-overlay"></div>
+      <div class="visual-mark">${category}</div>
+    </div>`;
+};
 
 const meta = (a) =>
   `<p class="meta"><span>${escapeHTML(a.source || "Source")}</span><span>${escapeHTML(relativeTime(a.published))}</span></p>`;
 
 const leadCard = (a) => `
   <article class="lead-card">
-    ${visual(a.category)}
+    ${visual(a, "lead")}
     <div class="copy">
       <span class="tag">${escapeHTML(a.category || "Latest")}</span>
       <h2><a href="${safeURL(a.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(a.title)}</a></h2>
@@ -70,7 +79,7 @@ const sideStory = (a) => `
 
 const storyCard = (a) => `
   <article class="story-card">
-    ${visual(a.category)}
+    ${visual(a, "card")}
     <span class="tag">${escapeHTML(a.category || "Latest")}</span>
     <h3><a href="${safeURL(a.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(a.title)}</a></h3>
     ${meta(a)}
