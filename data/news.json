@@ -1,0 +1,36 @@
+{
+  "updated_at": null,
+  "source": "Google News RSS search feeds",
+  "queries": [
+    {
+      "category": "Democracy",
+      "query": "\"democratic Iran\""
+    },
+    {
+      "category": "Democracy",
+      "query": "\"Iran democracy\""
+    },
+    {
+      "category": "Civil Society",
+      "query": "\"Iran civil society\""
+    },
+    {
+      "category": "Human Rights",
+      "query": "\"Iran human rights\""
+    },
+    {
+      "category": "Economy",
+      "query": "\"Iran economy\""
+    },
+    {
+      "category": "Culture",
+      "query": "\"Iran culture\""
+    },
+    {
+      "category": "Diaspora",
+      "query": "\"Iran diaspora\""
+    }
+  ],
+  "articles": [],
+  "errors": []
+}

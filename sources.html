@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources & Method — Democratic Republic of Iran</title>
+  <meta name="description" content="How the Democratic Republic of Iran news aggregator gathers and orders headlines.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="simple-header">
+    <div class="tricolor"><span></span><span></span><span></span></div>
+    <div class="wrap simple-nav">
+      <a class="mini-brand" href="index.html">DEMOCRATIC REPUBLIC OF IRAN</a>
+      <nav><a href="index.html">News</a><a href="about.html">About</a></nav>
+    </div>
+  </header>
+  <main class="article-page wrap">
+    <p class="eyebrow">SOURCES & METHOD</p>
+    <h1>How the automated news feed works.</h1>
+    <p class="dek">The site uses Google News RSS search feeds as discovery inputs. Google News determines which publisher results appear in those feeds; this site then normalizes, de-duplicates, categorizes, and displays the returned headlines.</p>
+
+    <div class="prose">
+      <h2>Configured searches</h2>
+      <ul class="query-list">
+        <li>“democratic Iran”</li>
+        <li>“Iran democracy”</li>
+        <li>“Iran civil society”</li>
+        <li>“Iran human rights”</li>
+        <li>“Iran economy”</li>
+        <li>“Iran culture”</li>
+        <li>“Iran diaspora”</li>
+      </ul>
+
+      <h2>What is displayed</h2>
+      <p>For each item, the site stores the headline, original Google News result link, publisher name, publication time, and the search category that surfaced it. It does not copy full articles.</p>
+
+      <h2>Ordering</h2>
+      <p>Items are ordered newest-first. Similar URLs and normalized headlines are de-duplicated. The site does not assign political scores or endorse the views of a publisher merely by displaying its headline.</p>
+
+      <h2>Automation</h2>
+      <p>A GitHub Actions workflow runs on a schedule and can also be run manually. It updates <code>data/news.json</code>, commits only when the feed changes, and lets GitHub Pages redeploy the static site.</p>
+
+      <h2>Source caution</h2>
+      <p>Aggregation is not verification. Headlines can contain disputed claims, analysis, or opinion. Readers should open the original article, consider the publisher, and compare reporting across sources.</p>
+    </div>
+  </main>
+  <footer class="footer"><div class="wrap footer-grid"><div><div class="footer-brand">DEMOCRATIC REPUBLIC OF IRAN</div></div><div><a href="index.html">News</a><a href="about.html">About</a></div><p class="copyright">© <span id="year"></span> Democratic Republic of Iran.</p></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

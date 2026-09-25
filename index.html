@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Democratic Republic of Iran — Independent News Aggregator</title>
+  <meta name="description" content="An independent source-attributed news aggregator tracking reporting about democracy, civil society, culture, economy, and public life in Iran.">
+  <meta property="og:title" content="Democratic Republic of Iran">
+  <meta property="og:description" content="Independent, source-attributed Iran news aggregation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://democraticrepublicofiran.org/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="utility-bar wrap">
+      <p>Independent Iran News Aggregator</p>
+      <div class="utility-links">
+        <a href="about.html">About</a>
+        <a href="sources.html">Sources & Method</a>
+      </div>
+    </div>
+
+    <div class="masthead wrap">
+      <a class="brand" href="index.html" aria-label="Democratic Republic of Iran home">
+        <span class="brand-kicker">THE</span>
+        <span class="brand-title">DEMOCRATIC REPUBLIC</span>
+        <span class="brand-title brand-title-small">OF IRAN</span>
+      </a>
+      <div class="masthead-note">
+        <strong>IRAN IN FOCUS</strong>
+        <span>Democracy · Society · Culture · Economy</span>
+      </div>
+    </div>
+
+    <nav class="primary-nav">
+      <div class="wrap nav-inner">
+        <button class="nav-link active" data-category="All">Latest</button>
+        <button class="nav-link" data-category="Democracy">Democracy</button>
+        <button class="nav-link" data-category="Civil Society">Civil Society</button>
+        <button class="nav-link" data-category="Human Rights">Human Rights</button>
+        <button class="nav-link" data-category="Economy">Economy</button>
+        <button class="nav-link" data-category="Culture">Culture</button>
+        <button class="nav-link" data-category="Diaspora">Diaspora</button>
+        <button class="search-toggle" id="searchToggle" aria-label="Search stories">⌕</button>
+      </div>
+    </nav>
+
+    <div class="search-panel" id="searchPanel" hidden>
+      <div class="wrap">
+        <label for="storySearch">Search aggregated headlines</label>
+        <input id="storySearch" type="search" placeholder="Search Iran coverage…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro wrap">
+      <div>
+        <p class="eyebrow">CONTINUOUSLY UPDATED</p>
+        <h1>Reporting about Iran, gathered in one place.</h1>
+      </div>
+      <p class="intro-copy">
+        Source-attributed coverage collected from Google News search feeds and organized chronologically.
+        Headlines open directly at the original publisher.
+      </p>
+    </section>
+
+    <section class="wrap status-row" aria-live="polite">
+      <span id="feedStatus">Loading the latest feed…</span>
+      <span id="lastUpdated"></span>
+    </section>
+
+    <section class="wrap lead-layout" id="leadLayout">
+      <article class="lead-card skeleton">
+        <div class="visual"></div>
+        <div class="copy">
+          <span class="tag">LATEST</span>
+          <h2>Loading current Iran coverage…</h2>
+          <p class="meta">The automated feed will appear here after its first update.</p>
+        </div>
+      </article>
+      <div class="side-stack" id="sideStack"></div>
+    </section>
+
+    <section class="wrap section-divider">
+      <div>
+        <p class="eyebrow">LATEST COVERAGE</p>
+        <h2 id="sectionTitle">All stories</h2>
+      </div>
+      <p id="resultsCount"></p>
+    </section>
+
+    <section class="wrap card-grid" id="newsGrid"></section>
+
+    <section class="wrap empty-state" id="emptyState" hidden>
+      <p class="eyebrow">FEED NOT POPULATED YET</p>
+      <h2>The site is ready. Run the “Update news feed” GitHub Action once.</h2>
+      <p>After that, this page fills automatically and the scheduled updater keeps it current.</p>
+    </section>
+
+    <section class="method-strip">
+      <div class="wrap method-grid">
+        <div>
+          <p class="eyebrow light">HOW IT WORKS</p>
+          <h2>Aggregation, not article copying.</h2>
+        </div>
+        <p>
+          This site displays source names, headlines, and publication times, then directs readers to the
+          original publisher. Political reporting is not scored or endorsed by this site.
+        </p>
+        <a class="text-link light-link" href="sources.html">Read the sourcing method →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand">DEMOCRATIC REPUBLIC OF IRAN</div>
+        <p>Independent, unaffiliated news aggregation focused on Iran.</p>
+      </div>
+      <div>
+        <a href="about.html">About</a>
+        <a href="sources.html">Sources & Method</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Democratic Republic of Iran. Third-party headlines remain the property of their respective publishers.</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
