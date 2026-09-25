@@ -385,7 +385,10 @@ def main():
             except Exception:
                 pass
 
-    final_articles = []
+    # Build image-backed candidates first, then select them in a category-balanced
+    # round-robin. This prevents the newest/most prolific query from crowding
+    # Culture, Diaspora, Civil Society, etc. out of the navigation.
+    image_backed = []
     seen_images = set()
 
     for article in resolved:
@@ -398,14 +401,62 @@ def main():
 
         article = article.copy()
         article["image_url"] = image
-        final_articles.append(article)
+        image_backed.append(article)
+
+    category_order = [
+        "Democracy",
+        "Civil Society",
+        "Human Rights",
+        "Economy",
+        "Culture",
+        "Diaspora",
+    ]
+
+    buckets = {
+        category: [a for a in image_backed if a.get("category") == category]
+        for category in category_order
+    }
+
+    final_articles = []
+    used_ids = set()
+
+    # First pass: guarantee up to 4 stories from every category that has them.
+    for round_index in range(4):
+        for category in category_order:
+            bucket = buckets[category]
+            if round_index >= len(bucket):
+                continue
+
+            article = bucket[round_index]
+            if article["id"] in used_ids:
+                continue
+
+            final_articles.append(article)
+            used_ids.add(article["id"])
+
+            if len(final_articles) >= TARGET_ARTICLES:
+                break
 
         if len(final_articles) >= TARGET_ARTICLES:
             break
 
+    # Then fill remaining space by recency.
+    if len(final_articles) < TARGET_ARTICLES:
+        for article in image_backed:
+            if article["id"] in used_ids:
+                continue
+
+            final_articles.append(article)
+            used_ids.add(article["id"])
+
+            if len(final_articles) >= TARGET_ARTICLES:
+                break
+
     print(f"Candidates: {len(candidates)}")
     print(f"Publisher URLs resolved: {len(resolved)}")
     print(f"Real unique publisher images found: {len(final_articles)}")
+    for category in ["Democracy", "Civil Society", "Human Rights", "Economy", "Culture", "Diaspora"]:
+        print(f"{category}: {sum(1 for a in final_articles if a.get('category') == category)}")
 
     # Critical safety net: never turn a working site into a blank one again.
     if not final_articles:
