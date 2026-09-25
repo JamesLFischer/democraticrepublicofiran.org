@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+<defs>
+<pattern id="t" width="88" height="88" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+<path d="M44 6 57 31 82 44 57 57 44 82 31 57 6 44 31 31Z" fill="none" stroke="#d4ae69" stroke-opacity=".18" stroke-width="2"/>
+</pattern>
+</defs>
+<rect width="1200" height="400" fill="#0d0e0c"/>
+<rect width="1200" height="400" fill="url(#t)"/>
+<path d="M0 312 180 205 330 274 520 168 700 258 920 186 1200 302V400H0Z" fill="#1d5a45" fill-opacity=".22"/>
+<path d="M0 326H1200" stroke="#9e3e3e" stroke-opacity=".42" stroke-width="4"/>
+</svg>

@@ -162,3 +162,146 @@ button,input{font:inherit}
 
 .newsroom-strip{border-top:1px solid #242421}
 .newsroom-strip .method-grid>p{font-family:var(--serif);font-size:18px;line-height:1.5}
+
+
+/* ---------- V4 editorial imagery ---------- */
+.iran-masthead{
+  position:relative;
+  overflow:hidden;
+  min-height:210px;
+  isolation:isolate;
+}
+.iran-masthead::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(245,241,232,.98) 0%,rgba(245,241,232,.93) 42%,rgba(245,241,232,.48) 70%,rgba(245,241,232,.16) 100%),
+    url("iran-masthead.svg") center right/cover no-repeat;
+  z-index:-2;
+}
+.iran-masthead::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:46%;
+  height:5px;
+  background:linear-gradient(90deg,var(--green) 0 34%,#f4efe5 34% 66%,var(--red) 66%);
+  opacity:.9;
+  z-index:-1;
+}
+.iran-masthead .brand,
+.iran-masthead .masthead-note{position:relative;z-index:2}
+
+.visual{
+  background:#171a18;
+}
+.visual .fallback-art,
+.visual .publisher-art{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.visual .fallback-art{z-index:0}
+.visual .publisher-art{z-index:1}
+.visual.has-fallback::before,
+.visual.has-fallback::after{display:none}
+.visual-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:linear-gradient(180deg,rgba(0,0,0,.02) 44%,rgba(0,0,0,.45) 100%);
+}
+.visual-mark{
+  z-index:3;
+}
+.visual.fallback-only .visual-mark{
+  top:auto;
+  right:auto;
+  bottom:14px;
+  left:14px;
+  width:auto;
+  height:auto;
+  inset:auto;
+  display:inline-flex;
+  padding:7px 9px;
+  background:rgba(17,17,15,.80);
+  border:1px solid rgba(255,255,255,.30);
+  font-family:var(--sans);
+  font-size:9px;
+  line-height:1;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.visual.has-image .visual-mark{
+  position:absolute;
+  z-index:3;
+}
+
+.side-story{
+  display:grid;
+  grid-template-columns:142px 1fr;
+  gap:15px;
+  align-items:start;
+  padding:0 0 18px;
+}
+.side-story .side-thumb .visual{
+  height:96px;
+  margin:0;
+}
+.side-story .side-thumb .visual-mark{
+  font-size:8px;
+  bottom:8px;
+  left:8px;
+  padding:5px 6px;
+}
+.side-story h3{
+  margin-top:5px;
+  font-size:19px;
+}
+.side-story .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 12px;
+}
+
+.newsroom-strip{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(12,13,11,.98),rgba(12,13,11,.90)),
+    url("iran-footer.svg") center/cover no-repeat;
+}
+.newsroom-strip::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-top:1px solid rgba(223,190,124,.24);
+  border-bottom:1px solid rgba(223,190,124,.14);
+}
+.newsroom-strip .wrap{position:relative;z-index:1}
+
+.footer{
+  background:
+    linear-gradient(90deg,rgba(7,7,6,.98),rgba(7,7,6,.94)),
+    url("iran-footer.svg") center/cover no-repeat;
+}
+
+@media (max-width:900px){
+  .iran-masthead{min-height:175px}
+  .side-story{grid-template-columns:120px 1fr}
+}
+@media (max-width:620px){
+  .iran-masthead::before{
+    background:
+      linear-gradient(90deg,rgba(245,241,232,.97),rgba(245,241,232,.83)),
+      url("iran-masthead.svg") center/cover no-repeat;
+  }
+  .side-story{grid-template-columns:112px 1fr}
+  .side-story .side-thumb .visual{height:88px}
+}
