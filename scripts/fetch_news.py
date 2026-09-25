@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """
-V8 updater: restore the image-fetching approach that previously produced real
-article photos, while keeping the newer clean frontend/layout.
+V21 news updater.
 
-Key safeguards:
-- Decode Google News links ONE AT A TIME (the earlier working approach).
-- Pull og:image / twitter:image / JSON-LD image from the publisher page.
-- Publish ONLY articles with real external images.
-- Never overwrite a previously good feed with an empty/broken run.
+The previous feed contained valid publisher image URLs, but many publishers reject
+browser hot-linking. The page therefore loaded the article list and then lost every
+story when those remote images returned 403/blocked responses in the visitor's browser.
+
+V21 downloads the publisher-declared image during the GitHub Action, creates a small
+JPEG thumbnail, and embeds it directly into data/news.json as a data:image URI.
+The browser no longer contacts the publisher's image server, so category pages do not
+empty themselves after rendering.
+
+The updater also:
+- preserves a previous good feed if a refresh fails;
+- migrates old remote-image articles to embedded thumbnails;
+- searches multiple Iran-focused terms for every category;
+- selects image-backed stories in a category-balanced round-robin.
 """
 
 from __future__ import annotations
@@ -17,9 +25,11 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from html.parser import HTMLParser
+from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlencode, urljoin
 from urllib.request import Request, urlopen
+import base64
 import hashlib
 import json
 import re
@@ -34,39 +44,67 @@ OUT = ROOT / "data" / "news.json"
 FEEDS = [
     ("Democracy", '"democratic Iran" when:7d'),
     ("Democracy", '"Iran democracy" when:7d'),
+    ("Democracy", '"Iran opposition" when:7d'),
+
     ("Civil Society", '"Iran civil society" when:7d'),
+    ("Civil Society", '"Iran women" when:7d'),
+    ("Civil Society", '"Iran students" when:7d'),
+
     ("Human Rights", '"Iran human rights" when:7d'),
+    ("Human Rights", '"Iran political prisoners" when:7d'),
+    ("Human Rights", '"Iran executions" when:7d'),
+
     ("Economy", '"Iran economy" when:7d'),
+    ("Economy", '"Iran oil" when:7d'),
+    ("Economy", '"Iran sanctions" when:7d'),
+
     ("Culture", '"Iran culture" when:7d'),
+    ("Culture", '"Iran art" when:7d'),
+    ("Culture", '"Iran film" when:7d'),
+
     ("Diaspora", '"Iran diaspora" when:7d'),
+    ("Diaspora", '"Iranian diaspora" when:7d'),
+    ("Diaspora", '"Iranian Americans" when:7d'),
 ]
 
 BASE = "https://news.google.com/rss/search"
 EDITION = {"hl": "en-US", "gl": "US", "ceid": "US:en"}
 
-MAX_PER_FEED = 28
-MAX_CANDIDATES = 70
-TARGET_ARTICLES = 36
+MAX_PER_FEED = 18
+MAX_CANDIDATES = 120
+TARGET_ARTICLES = 42
 MAX_WORKERS = 6
-TIMEOUT = 14
+TIMEOUT = 15
+MAX_IMAGE_BYTES = 10_000_000
+THUMB_WIDTH = 900
+THUMB_HEIGHT = 520
+JPEG_QUALITY = 76
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
 )
 
-def get_decoder():
+def ensure_dependencies():
     try:
         from googlenewsdecoder import gnewsdecoder
-        return gnewsdecoder
     except ImportError:
-        print("Installing Google News URL decoder...")
         subprocess.check_call([
             sys.executable, "-m", "pip", "install",
             "--disable-pip-version-check", "googlenewsdecoder==0.2.1"
         ])
         from googlenewsdecoder import gnewsdecoder
-        return gnewsdecoder
+
+    try:
+        from PIL import Image, ImageOps
+    except ImportError:
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install",
+            "--disable-pip-version-check", "Pillow>=10,<12"
+        ])
+        from PIL import Image, ImageOps
+
+    return gnewsdecoder, Image, ImageOps
 
 def clean(text: str | None) -> str:
     if not text:
@@ -215,12 +253,8 @@ class PreviewParser(HTMLParser):
                 self._walk(child)
 
 def decode_one(gnewsdecoder, google_url: str) -> str:
-    """
-    Deliberately use the simple per-URL call that worked in the earlier version.
-    No batch/concurrency arguments are passed into the decoder itself.
-    """
     try:
-        result = gnewsdecoder(google_url, interval=None)
+        result = gnewsdecoder(google_url, interval=0.45)
         if not isinstance(result, dict):
             return ""
 
@@ -229,8 +263,8 @@ def decode_one(gnewsdecoder, google_url: str) -> str:
 
         if direct and status is not False and direct.startswith(("http://", "https://")):
             return direct
-    except Exception as exc:
-        print(f"Decode failed: {type(exc).__name__}: {exc}")
+    except Exception:
+        pass
 
     return ""
 
@@ -247,8 +281,7 @@ def get_preview_image(article_url: str) -> str:
                 return ""
 
             final_url = response.geturl()
-            html = response.read(1_250_000).decode("utf-8", "ignore")
-
+            html = response.read(1_400_000).decode("utf-8", "ignore")
     except Exception:
         return ""
 
@@ -287,6 +320,62 @@ def get_preview_image(article_url: str) -> str:
 
     return ""
 
+def thumbnail_data_uri(image_url: str, article_url: str, Image, ImageOps):
+    try:
+        headers = {
+            "User-Agent": USER_AGENT,
+            "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        }
+        if article_url:
+            headers["Referer"] = article_url
+
+        req = Request(image_url, headers=headers)
+        with urlopen(req, timeout=TIMEOUT) as response:
+            ctype = (response.headers.get("Content-Type") or "").lower()
+            if "image/" not in ctype:
+                return None
+
+            data = response.read(MAX_IMAGE_BYTES + 1)
+
+        if len(data) < 8_000 or len(data) > MAX_IMAGE_BYTES:
+            return None
+
+        source_hash = hashlib.sha1(data).hexdigest()
+
+        with Image.open(BytesIO(data)) as im:
+            im = im.convert("RGB")
+
+            # Reject obviously tiny/icon-like assets.
+            if im.width < 300 or im.height < 160:
+                return None
+
+            # Produce one predictable editorial thumbnail size.
+            fitted = ImageOps.fit(
+                im,
+                (THUMB_WIDTH, THUMB_HEIGHT),
+                method=Image.Resampling.LANCZOS,
+                centering=(0.5, 0.5),
+            )
+
+            out = BytesIO()
+            fitted.save(
+                out,
+                format="JPEG",
+                quality=JPEG_QUALITY,
+                optimize=True,
+                progressive=True,
+            )
+
+        encoded = base64.b64encode(out.getvalue()).decode("ascii")
+        return {
+            "image_url": "data:image/jpeg;base64," + encoded,
+            "source_image_url": image_url,
+            "source_hash": source_hash,
+        }
+
+    except Exception:
+        return None
+
 def load_previous():
     if not OUT.exists():
         return {"articles": []}
@@ -296,23 +385,98 @@ def load_previous():
     except Exception:
         return {"articles": []}
 
-def previous_good_articles(previous):
-    output = []
-    seen = set()
+def migrate_previous(previous, Image, ImageOps):
+    migrated = []
+    seen_hashes = set()
 
     for article in previous.get("articles", []):
         image = article.get("image_url", "")
-        if not image or image in seen:
-            continue
-        seen.add(image)
-        output.append(article)
 
-    return output
+        # Already self-contained: preserve as-is.
+        if isinstance(image, str) and image.startswith("data:image/"):
+            clone = article.copy()
+            hash_key = hashlib.sha1(image.encode("utf-8")).hexdigest()
+            if hash_key in seen_hashes:
+                continue
+            seen_hashes.add(hash_key)
+            migrated.append(clone)
+            continue
+
+        if not image or not image.startswith(("http://", "https://")):
+            continue
+
+        cached = thumbnail_data_uri(
+            image,
+            article.get("url", ""),
+            Image,
+            ImageOps,
+        )
+        if not cached or cached["source_hash"] in seen_hashes:
+            continue
+
+        seen_hashes.add(cached["source_hash"])
+        clone = article.copy()
+        clone["image_url"] = cached["image_url"]
+        clone["source_image_url"] = cached["source_image_url"]
+        migrated.append(clone)
+
+    return migrated
+
+def balanced_select(articles):
+    category_order = [
+        "Democracy",
+        "Civil Society",
+        "Human Rights",
+        "Economy",
+        "Culture",
+        "Diaspora",
+    ]
+
+    buckets = {
+        category: [a for a in articles if a.get("category") == category]
+        for category in category_order
+    }
+
+    selected = []
+    used = set()
+
+    # First guarantee up to 4 per category when available.
+    for round_index in range(4):
+        for category in category_order:
+            bucket = buckets[category]
+            if round_index >= len(bucket):
+                continue
+
+            article = bucket[round_index]
+            key = article.get("id") or article.get("url")
+            if key in used:
+                continue
+
+            selected.append(article)
+            used.add(key)
+
+            if len(selected) >= TARGET_ARTICLES:
+                return selected
+
+    # Then fill remaining slots by publication recency.
+    for article in sorted(articles, key=lambda a: a.get("published", ""), reverse=True):
+        key = article.get("id") or article.get("url")
+        if key in used:
+            continue
+
+        selected.append(article)
+        used.add(key)
+
+        if len(selected) >= TARGET_ARTICLES:
+            break
+
+    return selected
 
 def main():
-    gnewsdecoder = get_decoder()
+    gnewsdecoder, Image, ImageOps = ensure_dependencies()
+
     previous = load_previous()
-    old_good = previous_good_articles(previous)
+    previous_cached = migrate_previous(previous, Image, ImageOps)
 
     collected = []
     errors = []
@@ -322,8 +486,7 @@ def main():
             collected.extend(fetch_feed(category, query))
         except Exception as exc:
             errors.append(f"{category}: {exc}")
-
-        time.sleep(0.25)
+        time.sleep(0.18)
 
     collected.sort(key=lambda a: a["published"], reverse=True)
 
@@ -340,33 +503,38 @@ def main():
 
         if title_key:
             seen_titles.add(title_key)
-
         seen_google.add(google_key)
+
         candidates.append(article)
 
         if len(candidates) >= MAX_CANDIDATES:
             break
 
-    # Step 1: decode URLs serially using the earlier reliable call signature.
     resolved = []
 
     for idx, article in enumerate(candidates, 1):
         direct = decode_one(gnewsdecoder, article["google_news_url"])
 
         if direct:
-            article = article.copy()
-            article["url"] = direct
-            article["source_url"] = direct
-            resolved.append(article)
+            clone = article.copy()
+            clone["url"] = direct
+            clone["source_url"] = direct
+            resolved.append(clone)
 
         print(f"Decoded {idx}/{len(candidates)} | successes: {len(resolved)}")
 
-        if len(resolved) >= TARGET_ARTICLES * 2:
-            break
-
-    # Step 2: scrape preview images concurrently from the resolved publisher pages.
     def enrich(article):
-        return article["id"], get_preview_image(article["url"])
+        preview = get_preview_image(article["url"])
+        if not preview:
+            return article["id"], None
+
+        embedded = thumbnail_data_uri(
+            preview,
+            article["url"],
+            Image,
+            ImageOps,
+        )
+        return article["id"], embedded
 
     image_map = {}
 
@@ -385,105 +553,56 @@ def main():
             except Exception:
                 pass
 
-    # Build image-backed candidates first, then select them in a category-balanced
-    # round-robin. This prevents the newest/most prolific query from crowding
-    # Culture, Diaspora, Civil Society, etc. out of the navigation.
-    image_backed = []
-    seen_images = set()
+    new_articles = []
+    seen_hashes = set()
 
     for article in resolved:
-        image = image_map.get(article["id"], "")
-
-        if not image or image in seen_images:
+        embedded = image_map.get(article["id"])
+        if not embedded:
             continue
 
-        seen_images.add(image)
+        if embedded["source_hash"] in seen_hashes:
+            continue
+        seen_hashes.add(embedded["source_hash"])
 
-        article = article.copy()
-        article["image_url"] = image
-        image_backed.append(article)
+        clone = article.copy()
+        clone["image_url"] = embedded["image_url"]
+        clone["source_image_url"] = embedded["source_image_url"]
+        new_articles.append(clone)
 
-    category_order = [
-        "Democracy",
-        "Civil Society",
-        "Human Rights",
-        "Economy",
-        "Culture",
-        "Diaspora",
-    ]
+    # Prefer fresh stories, then retain still-recent cached stories for category coverage.
+    combined = []
+    seen_ids = set()
 
-    buckets = {
-        category: [a for a in image_backed if a.get("category") == category]
-        for category in category_order
-    }
+    for article in new_articles + previous_cached:
+        key = article.get("id") or article.get("url")
+        if not key or key in seen_ids:
+            continue
+        seen_ids.add(key)
+        combined.append(article)
 
-    final_articles = []
-    used_ids = set()
-
-    # First pass: guarantee up to 4 stories from every category that has them.
-    for round_index in range(4):
-        for category in category_order:
-            bucket = buckets[category]
-            if round_index >= len(bucket):
-                continue
-
-            article = bucket[round_index]
-            if article["id"] in used_ids:
-                continue
-
-            final_articles.append(article)
-            used_ids.add(article["id"])
-
-            if len(final_articles) >= TARGET_ARTICLES:
-                break
-
-        if len(final_articles) >= TARGET_ARTICLES:
-            break
-
-    # Then fill remaining space by recency.
-    if len(final_articles) < TARGET_ARTICLES:
-        for article in image_backed:
-            if article["id"] in used_ids:
-                continue
-
-            final_articles.append(article)
-            used_ids.add(article["id"])
-
-            if len(final_articles) >= TARGET_ARTICLES:
-                break
+    final_articles = balanced_select(combined)
 
     print(f"Candidates: {len(candidates)}")
     print(f"Publisher URLs resolved: {len(resolved)}")
-    print(f"Real unique publisher images found: {len(final_articles)}")
-    for category in ["Democracy", "Civil Society", "Human Rights", "Economy", "Culture", "Diaspora"]:
-        print(f"{category}: {sum(1 for a in final_articles if a.get('category') == category)}")
+    print(f"Fresh embedded-image stories: {len(new_articles)}")
+    print(f"Previous stories successfully migrated: {len(previous_cached)}")
+    print(f"Published stories: {len(final_articles)}")
 
-    # Critical safety net: never turn a working site into a blank one again.
+    for category in [
+        "Democracy", "Civil Society", "Human Rights",
+        "Economy", "Culture", "Diaspora"
+    ]:
+        count = sum(1 for a in final_articles if a.get("category") == category)
+        print(f"{category}: {count}")
+
     if not final_articles:
-        if old_good:
-            print(
-                f"WARNING: New run found 0 usable images. "
-                f"Keeping previous {len(old_good)} image-backed stories instead."
-            )
-            return
-
-        print(
-            "ERROR: New run found 0 usable images and there is no previous good feed. "
-            "news.json was NOT overwritten."
-        )
+        print("ERROR: No image-backed stories are available; existing news.json was left untouched.")
         sys.exit(1)
-
-    # If a later run is abnormally weak, preserve a clearly better prior feed.
-    if old_good and len(final_articles) < 5 and len(old_good) > len(final_articles):
-        print(
-            f"WARNING: New run produced only {len(final_articles)} image-backed stories. "
-            f"Keeping previous {len(old_good)}-story feed."
-        )
-        return
 
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        "source": "Google News discovery with original publisher preview images",
+        "source": "Google News discovery with self-contained publisher preview thumbnails",
         "queries": [
             {"category": category, "query": query.replace(" when:7d", "")}
             for category, query in FEEDS
@@ -493,7 +612,16 @@ def main():
         "stats": {
             "candidates": len(candidates),
             "publisher_urls_resolved": len(resolved),
-            "articles_with_real_unique_images": len(final_articles),
+            "fresh_embedded_image_stories": len(new_articles),
+            "migrated_previous_stories": len(previous_cached),
+            "published_stories": len(final_articles),
+            "category_counts": {
+                category: sum(1 for a in final_articles if a.get("category") == category)
+                for category in [
+                    "Democracy", "Civil Society", "Human Rights",
+                    "Economy", "Culture", "Diaspora"
+                ]
+            },
         },
     }
 
@@ -502,8 +630,6 @@ def main():
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-
-    print(f"Published {len(final_articles)} real-image stories.")
 
 if __name__ == "__main__":
     main()
