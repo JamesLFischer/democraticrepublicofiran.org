@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-Update the Iran news feed and attach each story's publisher-declared preview image.
-
-Important implementation detail:
-The existing GitHub workflow only calls this Python file. To avoid another hidden
-.github upload problem, this script installs its pinned Google News URL decoder
-itself if the package is not already present.
-"""
-
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -42,7 +33,8 @@ FEEDS = [
 BASE = "https://news.google.com/rss/search"
 EDITION = {"hl": "en-US", "gl": "US", "ceid": "US:en"}
 MAX_PER_FEED = 30
-MAX_TOTAL = 90
+TARGET_TOTAL = 42
+MAX_TOTAL_CANDIDATES = 120
 MAX_WORKERS = 8
 TIMEOUT = 12
 USER_AGENT = (
@@ -55,7 +47,6 @@ def get_decoder():
         from googlenewsdecoder import gnewsdecoder
         return gnewsdecoder
     except ImportError:
-        print("googlenewsdecoder is missing; installing pinned version 0.2.1...")
         subprocess.check_call([
             sys.executable, "-m", "pip", "install",
             "--disable-pip-version-check", "googlenewsdecoder==0.2.1"
@@ -106,10 +97,7 @@ def fetch_feed(category: str, query: str) -> list[dict]:
             continue
 
         dt = parse_date(pub)
-        item_id = hashlib.sha1(
-            (normalized_title(title) or link).encode("utf-8")
-        ).hexdigest()[:16]
-
+        item_id = hashlib.sha1((normalized_title(title) or link).encode("utf-8")).hexdigest()[:16]
         items.append({
             "id": item_id,
             "title": title,
@@ -167,36 +155,35 @@ class PreviewParser(HTMLParser):
             raw = "".join(self.jsonld).strip()
             self.in_jsonld = False
             self.jsonld = []
-            if not raw:
-                return
-            try:
-                self._walk_json(json.loads(raw))
-            except Exception:
-                pass
+            if raw:
+                try:
+                    self._walk(json.loads(raw))
+                except Exception:
+                    pass
 
-    def _walk_json(self, obj):
+    def _walk(self, obj):
         if isinstance(obj, dict):
             image = obj.get("image")
             if isinstance(image, str):
                 self.images.append(image)
             elif isinstance(image, dict):
-                value = image.get("url") or image.get("contentUrl")
-                if isinstance(value, str):
-                    self.images.append(value)
+                v = image.get("url") or image.get("contentUrl")
+                if isinstance(v, str):
+                    self.images.append(v)
             elif isinstance(image, list):
-                for value in image:
-                    if isinstance(value, str):
-                        self.images.append(value)
-                    elif isinstance(value, dict):
-                        u = value.get("url") or value.get("contentUrl")
-                        if isinstance(u, str):
-                            self.images.append(u)
+                for item in image:
+                    if isinstance(item, str):
+                        self.images.append(item)
+                    elif isinstance(item, dict):
+                        v = item.get("url") or item.get("contentUrl")
+                        if isinstance(v, str):
+                            self.images.append(v)
             for value in obj.values():
                 if isinstance(value, (dict, list)):
-                    self._walk_json(value)
+                    self._walk(value)
         elif isinstance(obj, list):
             for value in obj:
-                self._walk_json(value)
+                self._walk(value)
 
 def fetch_preview_image(article_url: str) -> str:
     try:
@@ -240,18 +227,40 @@ def fetch_preview_image(article_url: str) -> str:
         return absolute
     return ""
 
-def load_previous() -> dict[str, dict]:
-    if not OUT.exists():
-        return {}
+def decode_urls(articles):
+    gnewsdecoder = get_decoder()
+    urls = [a["google_news_url"] for a in articles]
+    decoded_map = {}
+
+    # First try a batch decode.
     try:
-        payload = json.loads(OUT.read_text(encoding="utf-8"))
-        return {
-            a["id"]: a
-            for a in payload.get("articles", [])
-            if isinstance(a, dict) and a.get("id")
-        }
+        batch = gnewsdecoder(urls, interval=None, timeout=15.0)
+        if not isinstance(batch, list):
+            batch = [batch]
+        for article, result in zip(articles, batch):
+            if isinstance(result, dict):
+                direct = result.get("decoded_url")
+                ok = result.get("success") if "success" in result else result.get("status")
+                if direct and ok is not False:
+                    decoded_map[article["id"]] = direct
     except Exception:
-        return {}
+        pass
+
+    # Fill any misses one-by-one.
+    for article in articles:
+        if article["id"] in decoded_map:
+            continue
+        try:
+            result = gnewsdecoder(article["google_news_url"], interval=None, timeout=15.0)
+            if isinstance(result, dict):
+                direct = result.get("decoded_url")
+                ok = result.get("success") if "success" in result else result.get("status")
+                if direct and ok is not False:
+                    decoded_map[article["id"]] = direct
+        except Exception:
+            continue
+
+    return decoded_map
 
 def main():
     articles = []
@@ -266,54 +275,33 @@ def main():
 
     articles.sort(key=lambda a: a["published"], reverse=True)
 
-    seen_titles, seen_urls, deduped = set(), set(), []
+    seen_titles, seen_gnews, deduped = set(), set(), []
     for article in articles:
         tkey = normalized_title(article["title"])
-        ukey = article["google_news_url"]
-        if (tkey and tkey in seen_titles) or ukey in seen_urls:
+        gkey = article["google_news_url"]
+        if (tkey and tkey in seen_titles) or gkey in seen_gnews:
             continue
         if tkey:
             seen_titles.add(tkey)
-        seen_urls.add(ukey)
+        seen_gnews.add(gkey)
         deduped.append(article)
-        if len(deduped) >= MAX_TOTAL:
+        if len(deduped) >= MAX_TOTAL_CANDIDATES:
             break
 
-    previous = load_previous()
-
-    # Current decoder supports batching; one batch POST is faster and more reliable
-    # than independently resolving every Google News wrapper.
-    gnewsdecoder = get_decoder()
-    google_urls = [a["google_news_url"] for a in deduped]
-    try:
-        decoded = gnewsdecoder(google_urls, interval=None, timeout=15.0)
-        if not isinstance(decoded, list):
-            decoded = [decoded]
-    except Exception as exc:
-        print(f"Google URL batch decode failed: {exc}")
-        decoded = []
-
+    decoded = decode_urls(deduped)
     resolved = 0
-    for i, article in enumerate(deduped):
-        result = decoded[i] if i < len(decoded) and isinstance(decoded[i], dict) else {}
-        direct = result.get("decoded_url") if result.get("success") else None
-
-        if direct and direct.startswith(("http://", "https://")):
+    for article in deduped:
+        direct = decoded.get(article["id"], "")
+        if direct and direct.startswith(("https://", "http://")):
             article["url"] = direct
+            article["source_url"] = direct
             resolved += 1
-        else:
-            old = previous.get(article["id"], {})
-            old_url = old.get("url", "")
-            if old_url and "news.google.com/" not in old_url:
-                article["url"] = old_url
 
-    def enrich(article: dict) -> tuple[str, str]:
-        old_image = previous.get(article["id"], {}).get("image_url", "")
+    def enrich(article):
         url = article.get("url", "")
         if not url or "news.google.com/" in url:
-            return article["id"], old_image
-        image = fetch_preview_image(url)
-        return article["id"], image or old_image
+            return article["id"], ""
+        return article["id"], fetch_preview_image(url)
 
     image_map = {}
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
@@ -321,37 +309,46 @@ def main():
         for future in as_completed(futures):
             try:
                 article_id, image = future.result()
-                image_map[article_id] = image
+                if image:
+                    image_map[article_id] = image
             except Exception:
                 pass
 
     for article in deduped:
         article["image_url"] = image_map.get(article["id"], "")
 
-    image_count = sum(bool(a.get("image_url")) for a in deduped)
+    # Keep only articles with unique real images
+    final_articles = []
+    seen_images = set()
+    for article in deduped:
+        img = article.get("image_url", "")
+        if not img or img in seen_images:
+            continue
+        seen_images.add(img)
+        final_articles.append(article)
+        if len(final_articles) >= TARGET_TOTAL:
+            break
 
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        "source": "Google News search discovery with publisher-declared preview metadata",
+        "source": "Google News search discovery with publisher article preview images",
         "queries": [{"category": c, "query": q.replace(" when:7d", "")} for c, q in FEEDS],
-        "articles": deduped,
+        "articles": final_articles,
         "errors": feed_errors,
         "stats": {
-            "articles": len(deduped),
+            "candidate_articles": len(deduped),
+            "published_articles": len(final_articles),
             "publisher_urls_resolved": resolved,
-            "preview_images_found": image_count,
+            "preview_images_found": len(seen_images),
         },
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8"
-    )
+    OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    print(f"Wrote {len(deduped)} articles.")
+    print(f"Wrote {len(final_articles)} published articles from {len(deduped)} candidates.")
     print(f"Resolved {resolved}/{len(deduped)} publisher URLs.")
-    print(f"Found {image_count}/{len(deduped)} publisher preview images.")
+    print(f"Found {len(seen_images)} unique real preview images.")
     if feed_errors:
         print("Feed errors:")
         for error in feed_errors:
