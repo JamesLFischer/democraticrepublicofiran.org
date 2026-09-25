@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:33:36.926795Z",
+  "updated_at": "2026-09-25T21:37:39.505539Z",
   "source": "Google News discovery with self-contained publisher preview thumbnails",
   "queries": [
     {
@@ -627,7 +627,7 @@
   "stats": {
     "candidates": 120,
     "publisher_urls_resolved": 120,
-    "fresh_embedded_image_stories": 96,
+    "fresh_embedded_image_stories": 95,
     "migrated_previous_stories": 42,
     "published_stories": 42,
     "category_counts": {
