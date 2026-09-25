@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:02:24.562186Z",
+  "updated_at": "2026-09-25T21:12:41.514948Z",
   "source": "Google News discovery with original publisher preview images",
   "queries": [
     {
@@ -33,18 +33,6 @@
   ],
   "articles": [
     {
-      "id": "de5d51e15ac8d35b",
-      "title": "4,000 Tons of Exported Iranian Agricultural Produce and Fresh Vegetables Returned - Iran Focus",
-      "url": "https://iranfocus.com/iran/58972-4000-tons-of-exported-iranian-agricultural-produce-and-fresh-vegetables-returned/?amp",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPSjRaRFFtY3hvV3FQaDl3UGd2cy1KR1FiNXNpR1FfZUEweUo1V0NfRTRKaWRZb3RPRUJTc09YS3lNaEl6RkxqVENNU0E5ZDN0Ul9vekpzd0x2ak42VXBVNmRBSHVNaDhxSzd5Rlk2eG9ZY25SM2x6dWoxaHhnRDVYZ0c3VUp6cHlYWWV4Z3QwWkZoUVZfV0ptUnhxdFdhZENuUHhpdXdMWnF2QVZKanM2bUlxRGJ2Y0lTSkHSAboBQVVfeXFMT0o0WkRRbWN4b1dxUGg5d1BndnMtSkdRYjVzaUdRX2VBMHlKNVdDX0U0SmlkWW90T0VCU3NPWEt5TWhJekZMalRDTVNBOWQzdFJfb3pKc3dMdmpONlVwVTZkQUh1TWg4cUs3eUZZNnhvWWNuUjNsenVqMWh4Z0Q1WGdHN1VKenB5WFlleGd0MFpGaFFWX1dKbVJ4cXRXYWRDblB4aXV3TFpxdkFWSmpzNm1JcURidmNJU0pB?oc=5",
-      "source": "Iran Focus",
-      "source_url": "https://iranfocus.com/iran/58972-4000-tons-of-exported-iranian-agricultural-produce-and-fresh-vegetables-returned/?amp",
-      "published": "2026-09-25T19:13:49Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
-      "image_url": "https://iranfocus.com/wp-content/uploads/2026/09/4000-Tons-of-Exported-Iranian-Agricultural-Produce-and-Fresh-Vegetables-Returned.png"
-    },
-    {
       "id": "16a57d7d80964993",
       "title": "What will Iran look like in one year ? Eight guesses from foreign policy experts. - washingtonsun.com",
       "url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
@@ -57,6 +45,30 @@
       "image_url": "https://static.washingtonsun.com/dims4/default/c1664b7/2147483647/strip/true/crop/3447x1939+0+180/resize/1440x810!/quality/90/?url=https%3A%2F%2Fk2-prod-aji.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fec%2Fed%2F979b5ea14b8f9a8958526b82d4c8%2Firan-22187715707887.jpg"
     },
     {
+      "id": "188851f1605fc534",
+      "title": "France calls out Iran’s ‘unacceptable’ closure of language center in Tehran: ‘Unjustifiable’ - New York Post",
+      "url": "https://nypost.com/2026/09/21/world-news/france-calls-out-irans-unacceptable-language-center-closure/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeTExRkc0U3lwempzQTkxc28wSXlubXFBXzdFY1dNbVZiMXY0Z1FrZUV3YllhR0dEOUVWRlkyVHNBNUFvcnk5N3RFdktKU256YndFZ3VWbWNPLVRnVDR1UzhEMmk1OEZ2ZkhidHBGSG8yR05ZZTB4Z1lDdE1Xd2YwdFVfcFg5MWxUdHhVb1BObmRYNTVOMW0yNGYtc0ZkbkY2Y3Rj?oc=5",
+      "source": "New York Post",
+      "source_url": "https://nypost.com/2026/09/21/world-news/france-calls-out-irans-unacceptable-language-center-closure/",
+      "published": "2026-09-21T14:22:00Z",
+      "category": "Civil Society",
+      "query": "\"Iran civil society\"",
+      "image_url": "https://nypost.com/wp-content/uploads/sites/2/2026/09/141943468.jpg?quality=75&strip=all&w=1200"
+    },
+    {
+      "id": "de5d51e15ac8d35b",
+      "title": "4,000 Tons of Exported Iranian Agricultural Produce and Fresh Vegetables Returned - Iran Focus",
+      "url": "https://iranfocus.com/iran/58972-4000-tons-of-exported-iranian-agricultural-produce-and-fresh-vegetables-returned/?amp",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPSjRaRFFtY3hvV3FQaDl3UGd2cy1KR1FiNXNpR1FfZUEweUo1V0NfRTRKaWRZb3RPRUJTc09YS3lNaEl6RkxqVENNU0E5ZDN0Ul9vekpzd0x2ak42VXBVNmRBSHVNaDhxSzd5Rlk2eG9ZY25SM2x6dWoxaHhnRDVYZ0c3VUp6cHlYWWV4Z3QwWkZoUVZfV0ptUnhxdFdhZENuUHhpdXdMWnF2QVZKanM2bUlxRGJ2Y0lTSkHSAboBQVVfeXFMT0o0WkRRbWN4b1dxUGg5d1BndnMtSkdRYjVzaUdRX2VBMHlKNVdDX0U0SmlkWW90T0VCU3NPWEt5TWhJekZMalRDTVNBOWQzdFJfb3pKc3dMdmpONlVwVTZkQUh1TWg4cUs3eUZZNnhvWWNuUjNsenVqMWh4Z0Q1WGdHN1VKenB5WFlleGd0MFpGaFFWX1dKbVJ4cXRXYWRDblB4aXV3TFpxdkFWSmpzNm1JcURidmNJU0pB?oc=5",
+      "source": "Iran Focus",
+      "source_url": "https://iranfocus.com/iran/58972-4000-tons-of-exported-iranian-agricultural-produce-and-fresh-vegetables-returned/?amp",
+      "published": "2026-09-25T19:13:49Z",
+      "category": "Human Rights",
+      "query": "\"Iran human rights\"",
+      "image_url": "https://iranfocus.com/wp-content/uploads/2026/09/4000-Tons-of-Exported-Iranian-Agricultural-Produce-and-Fresh-Vegetables-Returned.png"
+    },
+    {
       "id": "a5c511247d71f280",
       "title": "Oil prices back up as U.S. and Iran trade fresh threats to expand 7-month war - CBS News",
       "url": "https://www.cbsnews.com/live-updates/iran-war-trump-un-speech-annihilate-threat-talks-resume/",
@@ -67,6 +79,42 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://assets1.cbsnewsstatic.com/hub/i/r/2026/09/24/7e337c61-643a-4be1-b6ea-7e44f9a6e1bf/thumbnail/1200x630/c7237f6ff0603616f9250860d32fa3e9/cape-dao-tanker-strait-of-hormuz.png"
+    },
+    {
+      "id": "4eaf8a3f54eedeaa",
+      "title": "Trump’s Unconscionable UN Rant - consortiumnews.com",
+      "url": "https://consortiumnews.com/2026/09/22/trumps-unconscionable-un-rant/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9UTVJ3ZG1RanFYdkZyVGZGeE5QMlNvc0xQcmJJa0UxQUZzcHU5dUk3QnVnT212LUhEQ0Z0c0FfRE1Xa0ViSjVydUNURmNqejdaakV0bG1nVjFObklnT0RNSXRZUTV0NUlQZno2Rnl6TWRqWlNrS3Mw?oc=5",
+      "source": "consortiumnews.com",
+      "source_url": "https://consortiumnews.com/2026/09/22/trumps-unconscionable-un-rant/",
+      "published": "2026-09-23T02:07:46Z",
+      "category": "Culture",
+      "query": "\"Iran culture\"",
+      "image_url": "https://consortiumnews.com/wp-content/uploads/2026/09/Screenshot-2026-09-22-at-21.19.35.png"
+    },
+    {
+      "id": "d9afef5bf19cdff3",
+      "title": "Iran regime's attempt to destroy evidence of its crimes shows it fears judgment day is nigh – Struan Stevenson - The Scotsman",
+      "url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
+      "google_news_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQVdmV20wLVN5ZlZjMjljWmVfX2lnQXJWUmtndFZXSU9ZcVBXWXVPWTkzbExCMENLWVRYYUNxa0I5b1pycEx3cGNzc2VrQnp2MTVUMGVRdkMtVGgwUXV4QnhKUmR3cnFVSTYzZ2ZGamh4cmNlNy1IQ21YT1pnTFlJTERid2pNdU1NU3AyQVN0SlRZTGN0TnhlSGF6a1V2cGplS01tR3FOWFdGdmxtOUhQbDlsU1BqY0FLQ0djY3B1UTJLVWRwXzVSTVg2TTBKdnFieTdLWC10b29UbnBLQ19SSA?oc=5",
+      "source": "The Scotsman",
+      "source_url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
+      "published": "2026-09-21T15:45:00Z",
+      "category": "Democracy",
+      "query": "\"Iran democracy\"",
+      "image_url": "https://www.scotsman.com/jpim-static/image/2026/09/21/11/30/GettyImages-1236731809.jpeg?width=1200&auto=webp&quality=75&trim=504,1350,394,7&crop="
+    },
+    {
+      "id": "391d3735aa7263f3",
+      "title": "France to summon Iran’s ambassador over closure of Tehran centre — Daily Maverick - UA.NEWS",
+      "url": "https://ua.news/en/world/frantsiia-vikliche-posla-iranu-cherez-zakrittia-tsentru-v-tegerani-daily-maverick",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUG54R2pSbzloX1pueTh4eWhlTnNacUhjSkc5N0NkZFcwYzFUZ19zcmNPLWo1OVhkVEVreWJVTjlDTGh0UTV6d0ZJWXktVkQ2LVVRX2NuT1BSS1JqTl9SZThTdTVubDE5WUpBYjV5MDRvc2xfZkhNa3ZYOWFKVFNIT0ozaEVHamRSWHkzbDJ1RUJqUUp4MkZNS0VlUkl1VUNlZl8wNjdJLUhGZw?oc=5",
+      "source": "UA.NEWS",
+      "source_url": "https://ua.news/en/world/frantsiia-vikliche-posla-iranu-cherez-zakrittia-tsentru-v-tegerani-daily-maverick",
+      "published": "2026-09-21T03:14:10Z",
+      "category": "Civil Society",
+      "query": "\"Iran civil society\"",
+      "image_url": "https://cdn-cabinet.ua.news/uploads/images/france_summons_iran_ambassador_tehran_la_1789959438989.webp"
     },
     {
       "id": "89cdb98248a35a66",
@@ -93,6 +141,42 @@
       "image_url": "https://www.japantimes.co.jp/japantimes/uploads/images/2026/09/25/564985.JPG?v=3.1"
     },
     {
+      "id": "dfb344f2bc7b6c42",
+      "title": "FRC and FRC Action to Hold Pray Vote Stand Summit This Week - Family Research Council",
+      "url": "https://www.frc.org/pressrelease/frc-and-frc-action-to-hold-pray-vote-stand-summit-this-week",
+      "google_news_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTU9kTTZCZVpoR2JCRWFhRDEtMjh0SDJlZWJyYkJpSVptVEJfVDRkWXduZHNTZEhPZVgycjJyb2c0TkdsNlBSRktiWnppeDlRTDFfcGdiQjNNendQcGtPQjIwd2pxSDhCVGljVjZvSUItd0lsand6QXl3OUVGaFBtMV9kX2d5bHdEeHNRcUZDT1RFTmpLMkVN?oc=5",
+      "source": "Family Research Council",
+      "source_url": "https://www.frc.org/pressrelease/frc-and-frc-action-to-hold-pray-vote-stand-summit-this-week",
+      "published": "2026-09-22T12:03:23Z",
+      "category": "Culture",
+      "query": "\"Iran culture\"",
+      "image_url": "https://frc.org/img/item_type/PR_ITEM_FULL_1200x630.jpg"
+    },
+    {
+      "id": "07fb00338d1dd3bc",
+      "title": "Iran News in Brief – September 21, 2026 - National Council of Resistance of Iran - NCRI",
+      "url": "https://www.ncr-iran.org/en/news/iran-news-in-brief-september-21-2026/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBqOHFYeGF0RlZXNm4zRzlTd1ZjMjZjb01MRWZsYm4yQTJzbDROUThHY3BvWDN6LWJxOGo3QUJyb3FPRTA0MjBDT2hwWmlJT0EwY2lIR2ZXLUVIeS1QOVFBOG9USWJRcHZxSnA2aUR4NDRmZ0dmWUR3ZjRB?oc=5",
+      "source": "National Council of Resistance of Iran - NCRI",
+      "source_url": "https://www.ncr-iran.org/en/news/iran-news-in-brief-september-21-2026/",
+      "published": "2026-09-21T05:23:51Z",
+      "category": "Democracy",
+      "query": "\"democratic Iran\"",
+      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/france-paris-photo-exhibition-of-ncri-supporters-19092026.jpg"
+    },
+    {
+      "id": "a29679edd3432342",
+      "title": "Iran closes language center in Tehran, France vows response - DW.com",
+      "url": "https://www.dw.com/en/iran-closes-language-center-in-tehran-france-vows-response/a-79348984",
+      "google_news_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOVZ4NU5ROHF0Nkh0NGdRQ09lNXFPd29XVURYU19WU1hiT2VvMFp5MEhwQ20tVl93d1dKZi1wQnprTmRwMm5FUnQwLU1sTXZpWmRTNm4yWGtnSFo3dkJiMW1fTDN5eVdLSVBpejlSWW9HeGNyLW5zX09ZRjVYR05sMHhQbEx6VVcyMmFMYlM2bUZjdG5ITWfSAZYBQVVfeXFMUDhzbGJBOGFyVG5SXzVMMTByS0swclpQTHZhcUh1S1MyaVo0blBaQl93NW1uak1tUmJWc0NuSFoxOEN1RXhDel85Wi1venVBb3V2alZXUTREbVVTRlRBMlBqY0xQeF9rN2RqOWh3Qmd5SVY1aXRvNXNHSlY5bFgzYzdqTFJqbGhIM0FEVUdOV1h4dDRGVzZ3?oc=5",
+      "source": "DW.com",
+      "source_url": "https://www.dw.com/en/iran-closes-language-center-in-tehran-france-vows-response/a-79348984",
+      "published": "2026-09-21T01:26:17Z",
+      "category": "Civil Society",
+      "query": "\"Iran civil society\"",
+      "image_url": "https://static.dw.com/image/79346211_6.jpg"
+    },
+    {
       "id": "25ba464a5afe30f8",
       "title": "UN: Iranian Authorities Committed Crimes Against Humanity in January 2026 Suppression of Nationwide Protests - Center for Human Rights in Iran",
       "url": "https://iranhumanrights.org/2026/09/un-iranian-authorities-committed-crimes-against-humanity-in-january-2026-suppression-of-nationwide-protests/",
@@ -105,6 +189,54 @@
       "image_url": "https://iranhumanrights.org/wp-content/uploads/01-en-3-1-2-1.jpg"
     },
     {
+      "id": "9be783222a718484",
+      "title": "Iranian Regime Judiciary Expands Asset Seizures as Senior Clerics Brand Peace Talk a Crime - National Council of Resistance of Iran - NCRI",
+      "url": "https://www.ncr-iran.org/en/news/economy/iranian-regime-judiciary-expands-asset-seizures-as-senior-clerics-brand-peace-talk-a-crime/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcUkzN012V0tDdGFVX3pBZGcxOXhuSnVFYlFHSXpxcGNkZ1lqNXRfWXRiOWMzM1BlamkxLUlXZXQzWjRTOVBUS3VNM2s3OUJRcnpUM1FFWFQ0cTI2UlJ6RlQtOGhnaUlPaVcwY2VWbjgzRlRReVJEQkJUS0hPd2xDU0szN0hIN09HS0t6N2U5VGlIYWFVRFlnaEFrUzJTYTVFVkhOUkE3eWIybE5fbmFocDdHVGFud3ZvcHNQdXNPQmtHb0pyeGdid1o5U0I?oc=5",
+      "source": "National Council of Resistance of Iran - NCRI",
+      "source_url": "https://www.ncr-iran.org/en/news/economy/iranian-regime-judiciary-expands-asset-seizures-as-senior-clerics-brand-peace-talk-a-crime/",
+      "published": "2026-09-24T18:02:30Z",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
+      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/06/iran-parading-inmates-arrested.jpg"
+    },
+    {
+      "id": "76fd2064d430a1cc",
+      "title": "Farsnews | Iranian Commander: Trump, Netanyahu to Face Same Fate as Saddam Hossein - Fars",
+      "url": "https://farsnews.ir/Qaysar/1789913100287300776/Iranian-Commander-Trump-Netanyahu-to-Face-Same-Fate-as-Saddam-Hossein",
+      "google_news_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR3Z1VzRUSERYVzZ4N0NyS3pVVGFyWi1JYWN0a1RJcUg5VTF5WUdwR2pQcmhMM3dKYXBaLVZMUlFPdE11ZnNvV21RQTZNQmhyVjR4TWZNTWk1MjU4OE5SNXpKRHJrQ0pVNEIxNS1DbDlfcUM4THk2X1huSWlCUTlWclI1UDVrcWpTQ2l0TzBvSFVUb20wVjFLRmZLVWhWdkFwZXZSd3lRRWZHRjBSdDlyY2xycW16aTg?oc=5",
+      "source": "Fars",
+      "source_url": "https://farsnews.ir/Qaysar/1789913100287300776/Iranian-Commander-Trump-Netanyahu-to-Face-Same-Fate-as-Saddam-Hossein",
+      "published": "2026-09-20T14:39:26Z",
+      "category": "Culture",
+      "query": "\"Iran culture\"",
+      "image_url": "https://c.next-portal.com/guest/a8c08b526bb043dfa8bf034208f6fbc7?centerCrop=true&width=300"
+    },
+    {
+      "id": "7a3086009934af45",
+      "title": "NCRI Women’s Committee Chair Receives Courage Award at Major Youth Conference in Italy - National Council of Resistance of Iran - NCRI",
+      "url": "https://www.ncr-iran.org/en/news/iran-resistance/ncri-womens-committee-chair-receives-courage-award-at-major-youth-conference-in-italy/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObVAzXzByTHFUTGNoR18yb1BCc0w1LXItQmpmUGFFbzhPYjJja3NXT1g1NlNwM2RuNlVBWDlheFBfc28wcGdEbnlmeWEyXzBKdEJBX09vN3lBTDkwUVl0MUY3a2FMOFlpaXVQR1NfVk1xaER2WGxkbnVpX2xzYUJMemxhNjFQRjBralFNU0p5RlNWbFM5UWJwMUo0NktIOVFscDhDN1cwYUkzTUxfbWxWQVJURVY0T1dMTEN1YXNTOHI1aTJEc1lVWHcyWnRhUWpN?oc=5",
+      "source": "National Council of Resistance of Iran - NCRI",
+      "source_url": "https://www.ncr-iran.org/en/news/iran-resistance/ncri-womens-committee-chair-receives-courage-award-at-major-youth-conference-in-italy/",
+      "published": "2026-09-19T13:31:06Z",
+      "category": "Democracy",
+      "query": "\"democratic Iran\"",
+      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/Italian-Senator-Marco-Scurria-Sarvnaz-Chitsaz-18092026.jpg"
+    },
+    {
+      "id": "82143442433ac22c",
+      "title": "France vows response after Iran closes language centre in Tehran - The Straits Times",
+      "url": "https://www.straitstimes.com/world/europe/france-vows-response-after-iran-closes-language-centre-in-tehran",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMVhkYndaZmJ5NEYzVjVWZTltdzNRXzNVUnRSOVh0dGM4X2dKQXNwenAwdGQzVWxkTk14b0lzOHYyZEkyTDc4U2FlYjRIdENGWDBHX19nNUVXZXRGWUQ5NTNEMGV1NHNzYWJNNEtKSThCdXNFeEFpVTZDNFg5dHBzUFNHd1ZRTXZfMmtaLTJNUnhWTERPbXllN29Kb1F5YXZTY2hxNHF0bW9BQQ?oc=5",
+      "source": "The Straits Times",
+      "source_url": "https://www.straitstimes.com/world/europe/france-vows-response-after-iran-closes-language-centre-in-tehran",
+      "published": "2026-09-20T21:29:00Z",
+      "category": "Civil Society",
+      "query": "\"Iran civil society\"",
+      "image_url": "https://cassette.sphdigital.com.sg/image/straitstimes/14daaa95e1306877a48cb7dae80aa24cfc0ffe32cb24b9b4d890b929517a2993"
+    },
+    {
       "id": "df5365e2a9d8c974",
       "title": "New York Rally Calls for Condemnation of Human Rights Violation in Iran and Recognition of Resistance - Iran Focus",
       "url": "https://iranfocus.com/protests/58966-new-york-rally-calls-for-condemnation-of-human-rights-violation-in-iran-and-recognition-of-resistance/?amp",
@@ -115,6 +247,30 @@
       "category": "Human Rights",
       "query": "\"Iran human rights\"",
       "image_url": "https://iranfocus.com/wp-content/uploads/2026/09/New-York-Rally-Calls-for-Condemnation-of-Human-Rights-Violation-in-Iran-and-Recognition-of-Resistance.jpg"
+    },
+    {
+      "id": "fc98a01d41af5624",
+      "title": "Interpreting Pezeshkian’s Defiance at the UN General Assembly - National Council of Resistance of Iran - NCRI",
+      "url": "https://www.ncr-iran.org/en/news/iran-protests/interpreting-pezeshkians-defiance-at-the-un-general-assembly/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRVlfX0lOcnR2eURIaFpUMW9ETlJvT0VxaGtnd1h4TDIxY2tlLVd1aTdJaXVlaXlESnd4azBBQnBBZ2MyVWgyT0FHLW0taS16VDY4SFdCZE1FTjVibUZqUFNmMlJhU3dfMTR3bktJNjUydGRVWGxOb1lKNWhTVmVQZktUMVFKTTVCdjZtcHAxMlpfazl0NkZET0tuQmlKT2dUcFBzVUlQZWIwanJo?oc=5",
+      "source": "National Council of Resistance of Iran - NCRI",
+      "source_url": "https://www.ncr-iran.org/en/news/iran-protests/interpreting-pezeshkians-defiance-at-the-un-general-assembly/",
+      "published": "2026-09-24T16:44:10Z",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
+      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/un-new-york-masoud-pezeshkian-speech-23092026.jpg"
+    },
+    {
+      "id": "d1243fa2e09a6253",
+      "title": "Trump and Netanyahu will face same fate as Saddam Hussein, top Iranian commander warns - PressTV",
+      "url": "https://www.presstv.co.uk/Detail/2026/09/20/776664/Trump-Netanyahu-will-face-same-fate-Saddam-Hussein-top-Iranian-cmdr",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb044Xzl3Ym9aTU5HbzJLQ0RaTmxZcko4dzU4YjJVWmUwSko5Y0RQMUJuanNFRXJENmM5Q2IwejdtV0Z5a1RDaXEtTDFfMVFRR3RXX21XdkZ2VHpMa19ZQTZ3UUhoekt6NDFLaFlYWXE4VzVVakNVS1NUM2NZM3lfMDNxMG9oX2pEMTdad2pzcWE1cW1NMmNYVkxjdE53Y0U3bDlYOTFzT3U3S0NIa2RUVmdMOVpCZFF0RXc?oc=5",
+      "source": "PressTV",
+      "source_url": "https://www.presstv.co.uk/Detail/2026/09/20/776664/Trump-Netanyahu-will-face-same-fate-Saddam-Hussein-top-Iranian-cmdr",
+      "published": "2026-09-20T09:23:00Z",
+      "category": "Culture",
+      "query": "\"Iran culture\"",
+      "image_url": "https://cdn.presstv.co.uk/Photo/2026/9/20/1159284a-ce5a-4a9f-b069-9d36e9cee336.jpg"
     },
     {
       "id": "5183d77ee2d6683d",
@@ -139,30 +295,6 @@
       "category": "Human Rights",
       "query": "\"Iran human rights\"",
       "image_url": "https://iranfocus.com/wp-content/uploads/2026/09/United-Nations-Is-Concerned-About-Safety-of-Kolbars-in-Iran.jpg"
-    },
-    {
-      "id": "9be783222a718484",
-      "title": "Iranian Regime Judiciary Expands Asset Seizures as Senior Clerics Brand Peace Talk a Crime - National Council of Resistance of Iran - NCRI",
-      "url": "https://www.ncr-iran.org/en/news/economy/iranian-regime-judiciary-expands-asset-seizures-as-senior-clerics-brand-peace-talk-a-crime/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcUkzN012V0tDdGFVX3pBZGcxOXhuSnVFYlFHSXpxcGNkZ1lqNXRfWXRiOWMzM1BlamkxLUlXZXQzWjRTOVBUS3VNM2s3OUJRcnpUM1FFWFQ0cTI2UlJ6RlQtOGhnaUlPaVcwY2VWbjgzRlRReVJEQkJUS0hPd2xDU0szN0hIN09HS0t6N2U5VGlIYWFVRFlnaEFrUzJTYTVFVkhOUkE3eWIybE5fbmFocDdHVGFud3ZvcHNQdXNPQmtHb0pyeGdid1o5U0I?oc=5",
-      "source": "National Council of Resistance of Iran - NCRI",
-      "source_url": "https://www.ncr-iran.org/en/news/economy/iranian-regime-judiciary-expands-asset-seizures-as-senior-clerics-brand-peace-talk-a-crime/",
-      "published": "2026-09-24T18:02:30Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/06/iran-parading-inmates-arrested.jpg"
-    },
-    {
-      "id": "fc98a01d41af5624",
-      "title": "Interpreting Pezeshkian’s Defiance at the UN General Assembly - National Council of Resistance of Iran - NCRI",
-      "url": "https://www.ncr-iran.org/en/news/iran-protests/interpreting-pezeshkians-defiance-at-the-un-general-assembly/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRVlfX0lOcnR2eURIaFpUMW9ETlJvT0VxaGtnd1h4TDIxY2tlLVd1aTdJaXVlaXlESnd4azBBQnBBZ2MyVWgyT0FHLW0taS16VDY4SFdCZE1FTjVibUZqUFNmMlJhU3dfMTR3bktJNjUydGRVWGxOb1lKNWhTVmVQZktUMVFKTTVCdjZtcHAxMlpfazl0NkZET0tuQmlKT2dUcFBzVUlQZWIwanJo?oc=5",
-      "source": "National Council of Resistance of Iran - NCRI",
-      "source_url": "https://www.ncr-iran.org/en/news/iran-protests/interpreting-pezeshkians-defiance-at-the-un-general-assembly/",
-      "published": "2026-09-24T16:44:10Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/un-new-york-masoud-pezeshkian-speech-23092026.jpg"
     },
     {
       "id": "a763a1b59bddc59f",
@@ -285,18 +417,6 @@
       "image_url": "https://iranfreedom.org/en/wp-content/uploads/2026/09/BucharestSept19.jpg"
     },
     {
-      "id": "4eaf8a3f54eedeaa",
-      "title": "Trump’s Unconscionable UN Rant - consortiumnews.com",
-      "url": "https://consortiumnews.com/2026/09/22/trumps-unconscionable-un-rant/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9UTVJ3ZG1RanFYdkZyVGZGeE5QMlNvc0xQcmJJa0UxQUZzcHU5dUk3QnVnT212LUhEQ0Z0c0FfRE1Xa0ViSjVydUNURmNqejdaakV0bG1nVjFObklnT0RNSXRZUTV0NUlQZno2Rnl6TWRqWlNrS3Mw?oc=5",
-      "source": "consortiumnews.com",
-      "source_url": "https://consortiumnews.com/2026/09/22/trumps-unconscionable-un-rant/",
-      "published": "2026-09-23T02:07:46Z",
-      "category": "Culture",
-      "query": "\"Iran culture\"",
-      "image_url": "https://consortiumnews.com/wp-content/uploads/2026/09/Screenshot-2026-09-22-at-21.19.35.png"
-    },
-    {
       "id": "0e65491386f3e103",
       "title": "Trump urges nations to unite against Iran in UN address - Jewish Telegraphic Agency",
       "url": "https://www.jta.org/2026/09/22/global/trump-urges-nations-to-unite-against-iran-in-un-address",
@@ -343,126 +463,6 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2023/07/iran-economic-bankrupcy-crowd-bank-1.jpg"
-    },
-    {
-      "id": "925afdce2854bae2",
-      "title": "UN Probe Finds Crimes Against Humanity in Iran Crackdown - National Council of Resistance of Iran - NCRI",
-      "url": "https://www.ncr-iran.org/en/news/human-rights/un-probe-finds-crimes-against-humanity-in-iran-crackdown/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTFpJQmpiVVZnTGVNeFVSOElCSlFydjQtU21nOFJOWXlMWVdPeHB2aGhXbFhqaDY1eHZuSV82RjhJRHFrVUVYNzYzbkI3aDNQMGo4b1lGMnhyVVdJb0dBZm5mVE12U1NsOTVEUHhFelFiZ2s4eGRDNG9McmRPNDE3QzcwN19INmFxNFpfZ0N1NTN3Nm5sNFkxS2RuaFhkd1hSQ2JDYnNR?oc=5",
-      "source": "National Council of Resistance of Iran - NCRI",
-      "source_url": "https://www.ncr-iran.org/en/news/human-rights/un-probe-finds-crimes-against-humanity-in-iran-crackdown/",
-      "published": "2026-09-22T17:47:29Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
-      "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2022/03/UN-Human-Rights-Council.jpg"
-    },
-    {
-      "id": "7c205dbc27a08c81",
-      "title": "Iran’s Economy Is Collapsing. Why Hasn’t It Triggered Another Mass Uprising? - Algemeiner.com",
-      "url": "https://www.algemeiner.com/2026/09/22/irans-economy-collapsing-why-hasnt-triggered-another-mass-uprising/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOFZvOHdpR0ZlM0dhNlR2bHJ5b256cUJzczc5RDBFR0FzcjJ6UmF2QUVuS1Y1Z0M2MUl6ellaTF9jd3lCVmlaQ1JXZzhtZUxMeE4xeTBBdFVUWXJWVml0X2xXeTl4ZURJQXFpNzdOSm15dVJYQVRhX01wQlBlNWYtcnV6eVhRRV9tNnQ4Q0tFOEpTODdzbmZ5ZXd3UnpvZTk1OXA1ZGM5Z2Y?oc=5",
-      "source": "Algemeiner.com",
-      "source_url": "https://www.algemeiner.com/2026/09/22/irans-economy-collapsing-why-hasnt-triggered-another-mass-uprising/",
-      "published": "2026-09-22T17:43:00Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://www.algemeiner.com/wp-content/uploads/2026/01/2026-01-19T145828Z_1_LYNXMPEM0I0VR_RTROPTP_4_IRAN-ECONOMY-PROTESTS-1.jpg"
-    },
-    {
-      "id": "e86fc377f7f4dcd6",
-      "title": "Human Rights Appeal to Protect the Life of Koorosh Berenjani - Iran HRM - Iran Human Rights Monitor (Iran HRM)",
-      "url": "https://iran-hrm.com/2026/09/22/human-rights-appeal-to-protect-the-life-of-koorosh-berenjani/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQY0g0cWlfbm9jNHhQNzAzM2c4OVZjbXlnaFEwNmo1SlN1dWFza1pRU08xT2pwbm8tWUtfbU5FTFhjeHpxV01fLXZDcG1pOUE1Y0pmcGpnVFFmb0FxZ1BkZk1QdEpYRTBBQ2h1bExvY0JNVDR1LXpTM3JSSXp0RUNOcTlRdWJvdFVvVUpfUk5fT0NRcm96LXB1d9IBngFBVV95cUxNUkJ0Wkpzai1WamltODFQTzNVQ29mdE1va0J5NUFtRGhQZXBvWjFObFJJMk1zMEZGZzFsWWtQRHF2a1ZFekFheDdTc3NwNUxrQklFXzJMblhBUk13MFRJWHJvS04xRXU2amRNZERubDFEWUc2M3FRcHBWRkVfSkp0LV9leF9RTzItNWdfQzc3eVdXZE55bmdJbFN4YW8zUQ?oc=5",
-      "source": "Iran Human Rights Monitor (Iran HRM)",
-      "source_url": "https://iran-hrm.com/2026/09/22/human-rights-appeal-to-protect-the-life-of-koorosh-berenjani/",
-      "published": "2026-09-22T16:31:10Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
-      "image_url": "https://iran-hrm.com/wp-content/uploads/2026/09/IranHRM-Iran-Koorosh-Berenjani.jpg"
-    },
-    {
-      "id": "f47b4ff21e3b91fb",
-      "title": "Iran’s GDP Shrinks 10.1% in First Quarter as Oil Output and Industry Collapse - iranwire.com",
-      "url": "https://iranwire.com/en/news/157931-irans-gdp-shrinks-101-in-first-quarter-as-oil-output-and-industry-collapse/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc0R6UzNsSWI3TzdjTmt5NHdpUVBPNkZsbm1PMmgzaFB3SEZSYnYtY2I4RDRCczZNemVWZWtfQVFQVVlEUlIyOV9VZ29uT2xXT2dOZTlXTndFQ245U1lCTWVGVERTRW1INjNOLVVscG9oTVhuSkg5eVhnVG91c3k5eUc0R3dZckswNFp5YXR1ZG9SbjZMQVVLUlMyNkQ0Z3Rqal9RYklBTGRBYzNTcTMzRQ?oc=5",
-      "source": "iranwire.com",
-      "source_url": "https://iranwire.com/en/news/157931-irans-gdp-shrinks-101-in-first-quarter-as-oil-output-and-industry-collapse/",
-      "published": "2026-09-22T14:32:05Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://static.prod.iranwire.com/articleslide/Untitled-1_PGSl.png"
-    },
-    {
-      "id": "dfb344f2bc7b6c42",
-      "title": "FRC and FRC Action to Hold Pray Vote Stand Summit This Week - Family Research Council",
-      "url": "https://www.frc.org/pressrelease/frc-and-frc-action-to-hold-pray-vote-stand-summit-this-week",
-      "google_news_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTU9kTTZCZVpoR2JCRWFhRDEtMjh0SDJlZWJyYkJpSVptVEJfVDRkWXduZHNTZEhPZVgycjJyb2c0TkdsNlBSRktiWnppeDlRTDFfcGdiQjNNendQcGtPQjIwd2pxSDhCVGljVjZvSUItd0lsand6QXl3OUVGaFBtMV9kX2d5bHdEeHNRcUZDT1RFTmpLMkVN?oc=5",
-      "source": "Family Research Council",
-      "source_url": "https://www.frc.org/pressrelease/frc-and-frc-action-to-hold-pray-vote-stand-summit-this-week",
-      "published": "2026-09-22T12:03:23Z",
-      "category": "Culture",
-      "query": "\"Iran culture\"",
-      "image_url": "https://frc.org/img/item_type/PR_ITEM_FULL_1200x630.jpg"
-    },
-    {
-      "id": "d37736a228183374",
-      "title": "Political Prisoner Ali Zarei Douzdarehsi at Imminent Risk of Execution in Ghezelhesar Prison - Iran Human Rights",
-      "url": "https://iranhr.net/en/articles/9049/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1nX1lBVHBoazZ1bllVdlRBQ29fdE5OZkdmd2J6S1VQOUdzQk5KQzJjdF9INkNob0NwdlFpX19SaHR0dnlVN2dpU0hxOWU?oc=5",
-      "source": "Iran Human Rights",
-      "source_url": "https://iranhr.net/en/articles/9049/",
-      "published": "2026-09-22T09:03:19Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
-      "image_url": "http://iranhr.net/media/content/images/Ali_Zarei.jpg"
-    },
-    {
-      "id": "4fac6aa334122b4b",
-      "title": "UN says Iran committed crimes against humanity, US committed war crimes - Iran International",
-      "url": "https://www.iranintl.com/en/202609211866",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9vOHFIV2ZjYkFHX1Rxc0ZKX21RLTBTN2daTnhkRzRSalBuWlMtdk5MTWh2VlM3bk1KbHVucUVGZkRpdU96NldEUzBfdWpHYTF3SGc?oc=5",
-      "source": "Iran International",
-      "source_url": "https://www.iranintl.com/en/202609211866",
-      "published": "2026-09-21T23:41:00Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
-      "image_url": "https://i.iranintl.com/images/rdk9umy0/production/a9d87ba6709223d14c5b29636ae4b432a78c11ea-1129x591.webp?rect=2,0,1126,591&w=1200&h=630&q=66&fit=max&auto=format"
-    },
-    {
-      "id": "d9afef5bf19cdff3",
-      "title": "Iran regime's attempt to destroy evidence of its crimes shows it fears judgment day is nigh – Struan Stevenson - The Scotsman",
-      "url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
-      "google_news_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQVdmV20wLVN5ZlZjMjljWmVfX2lnQXJWUmtndFZXSU9ZcVBXWXVPWTkzbExCMENLWVRYYUNxa0I5b1pycEx3cGNzc2VrQnp2MTVUMGVRdkMtVGgwUXV4QnhKUmR3cnFVSTYzZ2ZGamh4cmNlNy1IQ21YT1pnTFlJTERid2pNdU1NU3AyQVN0SlRZTGN0TnhlSGF6a1V2cGplS01tR3FOWFdGdmxtOUhQbDlsU1BqY0FLQ0djY3B1UTJLVWRwXzVSTVg2TTBKdnFieTdLWC10b29UbnBLQ19SSA?oc=5",
-      "source": "The Scotsman",
-      "source_url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
-      "published": "2026-09-21T15:45:00Z",
-      "category": "Democracy",
-      "query": "\"Iran democracy\"",
-      "image_url": "https://www.scotsman.com/jpim-static/image/2026/09/21/11/30/GettyImages-1236731809.jpeg?width=1200&auto=webp&quality=75&trim=504,1350,394,7&crop="
-    },
-    {
-      "id": "e2264fabf3194eec",
-      "title": "Iran's war economy is squeezing the wrong people - thecradle.co",
-      "url": "https://thecradle.co/articles/irans-war-economy-is-squeezing-the-wrong-people",
-      "google_news_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQQmJuNU1rZG5vM1lET3dwSkpDNUxvT2FMWm9scjFOTVRvRS1BRmUxeVBWaHY3bW9OZ0ZlejFHMUxwVGYxdVNJd0dxSVFrSENEWlh3OWtCQ1JlUi1jRUtXeGZ3aHh5VER2cDlCNEdXYlhKaWNUNktYWVh1WkhGWjBuM25TMA?oc=5",
-      "source": "thecradle.co",
-      "source_url": "https://thecradle.co/articles/irans-war-economy-is-squeezing-the-wrong-people",
-      "published": "2026-09-21T14:30:51Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://thecradle-main.oss-eu-central-1.aliyuncs.com/public/articles/f61865d8-b5c3-11f1-a4e5-00163e02c055.webp"
-    },
-    {
-      "id": "188851f1605fc534",
-      "title": "France calls out Iran’s ‘unacceptable’ closure of language center in Tehran: ‘Unjustifiable’ - New York Post",
-      "url": "https://nypost.com/2026/09/21/world-news/france-calls-out-irans-unacceptable-language-center-closure/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeTExRkc0U3lwempzQTkxc28wSXlubXFBXzdFY1dNbVZiMXY0Z1FrZUV3YllhR0dEOUVWRlkyVHNBNUFvcnk5N3RFdktKU256YndFZ3VWbWNPLVRnVDR1UzhEMmk1OEZ2ZkhidHBGSG8yR05ZZTB4Z1lDdE1Xd2YwdFVfcFg5MWxUdHhVb1BObmRYNTVOMW0yNGYtc0ZkbkY2Y3Rj?oc=5",
-      "source": "New York Post",
-      "source_url": "https://nypost.com/2026/09/21/world-news/france-calls-out-irans-unacceptable-language-center-closure/",
-      "published": "2026-09-21T14:22:00Z",
-      "category": "Civil Society",
-      "query": "\"Iran civil society\"",
-      "image_url": "https://nypost.com/wp-content/uploads/sites/2/2026/09/141943468.jpg?quality=75&strip=all&w=1200"
     }
   ],
   "errors": [],
