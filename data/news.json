@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T20:32:54.531680Z",
+  "updated_at": "2026-09-25T20:46:18.730777Z",
   "source": "Google News discovery with original publisher preview images",
   "queries": [
     {
@@ -70,10 +70,10 @@
     },
     {
       "id": "fcc0953c16b7753d",
-      "title": "U.S., Iran said to be exploring phased deal to open Hormuz - The Japan Times",
+      "title": "U.S., Iran said to be exploring phased deal to open Hormuz - japantimes.co.jp",
       "url": "https://www.japantimes.co.jp/news/2026/09/25/world/politics/hormuz-phased-reopening/",
       "google_news_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPa0tsOTVpcHV3X0ZjLXRlSmtSOU5kbzhJYkhJbGpvRVA3d1R4N2FtUUhWTEY2X0lPTGJNYWFhSWJPV29MQzY1Tzl2TGt3VjZ4OVFsaGtRTjZIQXZ4VFJPNTdTMVBfT05vRVl5NE5KdFpmMXJZMGsxa21CbWtfdXhmcnBGd2J0cUpCcDBHQQ?oc=5",
-      "source": "The Japan Times",
+      "source": "japantimes.co.jp",
       "source_url": "https://www.japantimes.co.jp/news/2026/09/25/world/politics/hormuz-phased-reopening/",
       "published": "2026-09-25T02:23:00Z",
       "category": "Economy",
@@ -163,6 +163,18 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://i.iranintl.com/images/rdk9umy0/production/2311dde07a51428a11f9809d45a055c93808e587-1160x774.jpg?rect=0,83,1160,609&w=1200&h=630&q=66&fit=max&auto=format"
+    },
+    {
+      "id": "4cfec17dde4c64be",
+      "title": "Iran Has a Secret Weapon in Its War With America: Help From China - WSJ",
+      "url": "https://www.wsj.com/politics/china-iran-aid-xi-trump-summit-e6541ae8",
+      "google_news_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1yY3dWUm5TbW5ueVBKeTdlTHE0eGJtZmxISXdHdEtuTWYyTkhYQXdLTXdCakNnZkxpcndnY0dsYmx4NXJ1Q2tueXBPUHgyeVhGRjA1emNQTW8wcFFOUWdGX2pRNmNBMktfUWlGWWhUYzd0SUM1cWtV?oc=5",
+      "source": "WSJ",
+      "source_url": "https://www.wsj.com/politics/china-iran-aid-xi-trump-summit-e6541ae8",
+      "published": "2026-09-24T01:00:00Z",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
+      "image_url": "https://images.wsj.net/im-42315703/social"
     },
     {
       "id": "e26a3e8ee00c4e1b",
@@ -417,23 +429,11 @@
       "image_url": "https://i.iranintl.com/images/rdk9umy0/production/a9d87ba6709223d14c5b29636ae4b432a78c11ea-1129x591.webp?rect=2,0,1126,591&w=1200&h=630&q=66&fit=max&auto=format"
     },
     {
-      "id": "a29679edd3432342",
-      "title": "Iran closes language center in Tehran, France vows response - DW.com",
-      "url": "https://www.dw.com/en/iran-closes-language-center-in-tehran-france-vows-response/a-79348984",
-      "google_news_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOVZ4NU5ROHF0Nkh0NGdRQ09lNXFPd29XVURYU19WU1hiT2VvMFp5MEhwQ20tVl93d1dKZi1wQnprTmRwMm5FUnQwLU1sTXZpWmRTNm4yWGtnSFo3dkJiMW1fTDN5eVdLSVBpejlSWW9HeGNyLW5zX09ZRjVYR05sMHhQbEx6VVcyMmFMYlM2bUZjdG5ITWfSAZYBQVVfeXFMUDhzbGJBOGFyVG5SXzVMMTByS0swclpQTHZhcUh1S1MyaVo0blBaQl93NW1uak1tUmJWc0NuSFoxOEN1RXhDel85Wi1venVBb3V2alZXUTREbVVTRlRBMlBqY0xQeF9rN2RqOWh3Qmd5SVY1aXRvNXNHSlY5bFgzYzdqTFJqbGhIM0FEVUdOV1h4dDRGVzZ3?oc=5",
-      "source": "DW.com",
-      "source_url": "https://www.dw.com/en/iran-closes-language-center-in-tehran-france-vows-response/a-79348984",
-      "published": "2026-09-21T22:31:13Z",
-      "category": "Civil Society",
-      "query": "\"Iran civil society\"",
-      "image_url": "https://static.dw.com/image/79346211_6.jpg"
-    },
-    {
       "id": "d9afef5bf19cdff3",
-      "title": "Iran regime's attempt to destroy evidence of its crimes shows it fears judgment day is nigh – Struan Stevenson - scotsman.com",
+      "title": "Iran regime's attempt to destroy evidence of its crimes shows it fears judgment day is nigh – Struan Stevenson - The Scotsman",
       "url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
       "google_news_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQVdmV20wLVN5ZlZjMjljWmVfX2lnQXJWUmtndFZXSU9ZcVBXWXVPWTkzbExCMENLWVRYYUNxa0I5b1pycEx3cGNzc2VrQnp2MTVUMGVRdkMtVGgwUXV4QnhKUmR3cnFVSTYzZ2ZGamh4cmNlNy1IQ21YT1pnTFlJTERid2pNdU1NU3AyQVN0SlRZTGN0TnhlSGF6a1V2cGplS01tR3FOWFdGdmxtOUhQbDlsU1BqY0FLQ0djY3B1UTJLVWRwXzVSTVg2TTBKdnFieTdLWC10b29UbnBLQ19SSA?oc=5",
-      "source": "scotsman.com",
+      "source": "The Scotsman",
       "source_url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
       "published": "2026-09-21T15:45:00Z",
       "category": "Democracy",
