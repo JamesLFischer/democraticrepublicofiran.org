@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T20:54:54.018865Z",
+  "updated_at": "2026-09-25T21:02:24.562186Z",
   "source": "Google News discovery with original publisher preview images",
   "queries": [
     {
@@ -33,16 +33,28 @@
   ],
   "articles": [
     {
-      "id": "9c4580fc424e4412",
-      "title": "Berlin Sit-In on 210th Day Calls for an End to Executions in Iran and Backs the NCRI Alternative - Iran Freedom",
-      "url": "https://iranfreedom.org/en/iranian-communities/2026/09/berlin-sit-in-on-210th-day-calls-for-an-end-to-executions-in-iran-and-backs-the-ncri-alternative/91104/",
-      "google_news_url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPMFFxdXZBYWVsN2UxZ01xSGRQVkNEQ3BxcW9MZjJVUnY3d2VwcGt3WGk4Zjg3aTYySGJDU3pNY2J4RHNLSU52WFZrX3VhdVVRNFFDNXJRY1QzYm1QZldzU0hqbkFFXzZKZU83bGFtNllycVZQRkItLVVUV1l3YTBkTU00YmN1V0VxcWNTM1FhSTYzWFBBT2FPYnVEem83VWN5YUZDTDFIQ0JJNkVHUHZqTW41SVB0SDRzX2FlQ25ZdVhYVlM5NmhEQjUwUW5PeHYzOXd3WExFOVJUZWdXVzdTVTc3Y3RwRGwzUmtnU2ZVONIB7wFBVV95cUxPMFFxdXZBYWVsN2UxZ01xSGRQVkNEQ3BxcW9MZjJVUnY3d2VwcGt3WGk4Zjg3aTYySGJDU3pNY2J4RHNLSU52WFZrX3VhdVVRNFFDNXJRY1QzYm1QZldzU0hqbkFFXzZKZU83bGFtNllycVZQRkItLVVUV1l3YTBkTU00YmN1V0VxcWNTM1FhSTYzWFBBT2FPYnVEem83VWN5YUZDTDFIQ0JJNkVHUHZqTW41SVB0SDRzX2FlQ25ZdVhYVlM5NmhEQjUwUW5PeHYzOXd3WExFOVJUZWdXVzdTVTc3Y3RwRGwzUmtnU2ZVOA?oc=5",
-      "source": "Iran Freedom",
-      "source_url": "https://iranfreedom.org/en/iranian-communities/2026/09/berlin-sit-in-on-210th-day-calls-for-an-end-to-executions-in-iran-and-backs-the-ncri-alternative/91104/",
-      "published": "2026-09-25T16:42:24Z",
+      "id": "de5d51e15ac8d35b",
+      "title": "4,000 Tons of Exported Iranian Agricultural Produce and Fresh Vegetables Returned - Iran Focus",
+      "url": "https://iranfocus.com/iran/58972-4000-tons-of-exported-iranian-agricultural-produce-and-fresh-vegetables-returned/?amp",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPSjRaRFFtY3hvV3FQaDl3UGd2cy1KR1FiNXNpR1FfZUEweUo1V0NfRTRKaWRZb3RPRUJTc09YS3lNaEl6RkxqVENNU0E5ZDN0Ul9vekpzd0x2ak42VXBVNmRBSHVNaDhxSzd5Rlk2eG9ZY25SM2x6dWoxaHhnRDVYZ0c3VUp6cHlYWWV4Z3QwWkZoUVZfV0ptUnhxdFdhZENuUHhpdXdMWnF2QVZKanM2bUlxRGJ2Y0lTSkHSAboBQVVfeXFMT0o0WkRRbWN4b1dxUGg5d1BndnMtSkdRYjVzaUdRX2VBMHlKNVdDX0U0SmlkWW90T0VCU3NPWEt5TWhJekZMalRDTVNBOWQzdFJfb3pKc3dMdmpONlVwVTZkQUh1TWg4cUs3eUZZNnhvWWNuUjNsenVqMWh4Z0Q1WGdHN1VKenB5WFlleGd0MFpGaFFWX1dKbVJ4cXRXYWRDblB4aXV3TFpxdkFWSmpzNm1JcURidmNJU0pB?oc=5",
+      "source": "Iran Focus",
+      "source_url": "https://iranfocus.com/iran/58972-4000-tons-of-exported-iranian-agricultural-produce-and-fresh-vegetables-returned/?amp",
+      "published": "2026-09-25T19:13:49Z",
+      "category": "Human Rights",
+      "query": "\"Iran human rights\"",
+      "image_url": "https://iranfocus.com/wp-content/uploads/2026/09/4000-Tons-of-Exported-Iranian-Agricultural-Produce-and-Fresh-Vegetables-Returned.png"
+    },
+    {
+      "id": "16a57d7d80964993",
+      "title": "What will Iran look like in one year ? Eight guesses from foreign policy experts. - washingtonsun.com",
+      "url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
+      "google_news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSjkzSDZyMDhzYWczXzBOWG0wSDFsa3ZfSlhFc1ZOOEtueWlzdUU1OUNYVi02TGR5TWtaZGRuWHY4TGM0eHk5Vmt6X0J6MldseE9ROHJzWjlBNE40RHpuR2Vsb0RXTGdsRWJWQk42S1AzeFNZY21nT1lJQlVXQ2JzVXNkaVNPM3d6Z1dBd3VFRUZWaXNDVjRJWHBmU0ZrT00zTUwzWk0yaXRocXRpcF9pOTFKV0N4bjVGdG93VWdR?oc=5",
+      "source": "washingtonsun.com",
+      "source_url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
+      "published": "2026-09-25T18:47:05Z",
       "category": "Democracy",
       "query": "\"democratic Iran\"",
-      "image_url": "https://iranfreedom.org/en/wp-content/uploads/2026/09/Berlin-Sept-25-2026.jpg"
+      "image_url": "https://static.washingtonsun.com/dims4/default/c1664b7/2147483647/strip/true/crop/3447x1939+0+180/resize/1440x810!/quality/90/?url=https%3A%2F%2Fk2-prod-aji.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fec%2Fed%2F979b5ea14b8f9a8958526b82d4c8%2Firan-22187715707887.jpg"
     },
     {
       "id": "a5c511247d71f280",
@@ -67,6 +79,18 @@
       "category": "Human Rights",
       "query": "\"Iran human rights\"",
       "image_url": "https://iranfreedom.org/en/wp-content/uploads/2026/09/ParisSept24.jpg"
+    },
+    {
+      "id": "fcc0953c16b7753d",
+      "title": "U.S., Iran said to be exploring phased deal to open Hormuz - The Japan Times",
+      "url": "https://www.japantimes.co.jp/news/2026/09/25/world/politics/hormuz-phased-reopening/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPa0tsOTVpcHV3X0ZjLXRlSmtSOU5kbzhJYkhJbGpvRVA3d1R4N2FtUUhWTEY2X0lPTGJNYWFhSWJPV29MQzY1Tzl2TGt3VjZ4OVFsaGtRTjZIQXZ4VFJPNTdTMVBfT05vRVl5NE5KdFpmMXJZMGsxa21CbWtfdXhmcnBGd2J0cUpCcDBHQQ?oc=5",
+      "source": "The Japan Times",
+      "source_url": "https://www.japantimes.co.jp/news/2026/09/25/world/politics/hormuz-phased-reopening/",
+      "published": "2026-09-25T02:23:00Z",
+      "category": "Economy",
+      "query": "\"Iran economy\"",
+      "image_url": "https://www.japantimes.co.jp/japantimes/uploads/images/2026/09/25/564985.JPG?v=3.1"
     },
     {
       "id": "25ba464a5afe30f8",
@@ -139,18 +163,6 @@
       "category": "Economy",
       "query": "\"Iran economy\"",
       "image_url": "https://www.ncr-iran.org/en/wp-content/uploads/2026/09/un-new-york-masoud-pezeshkian-speech-23092026.jpg"
-    },
-    {
-      "id": "2031cdff89e991ef",
-      "title": "UN Experts Demand End to Killings of Kurdish Kolbars and Baloch Sukhtbars - irannewsupdate.com",
-      "url": "https://irannewsupdate.com/news/human-rights/un-experts-demand-end-to-killings-of-kurdish-kolbars-and-baloch-sukhtbars/?amp",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZVhmbHFKMmhldjd3QjVqZ0RpNFlsNzZIVGJYVlJ5YUR2R1JyRlY5WV96UlFVdG5zaWpNb3ZvcWZiV2VITWlZM2tsQ0trWHpHSVZTczRqdWswTXV1NWFjRy1hMDFaS1d1RXRsNFh3ckpRX2FEUE1IaFhDY3d4eF9LN0ZZQ3lvWlJKR19GWnFPZEt6X09wR3lwWHRLSzJkeXdSU2dMWDduQVNIUUgxYnZVeXNWako1RW1TQ0M3R1plWm7SAcABQVVfeXFMTmVYZmxxSjJoZXY3d0I1amdEaTRZbDc2SFRiWFZSeWFEdkdSckZWOVlfelJRVXRuc2lqTW92b3FmYldlSE1pWTNrbENLa1h6R0lWU3M0anVrME11dTVhY0ctYTAxWktXdUV0bDRYd3JKUV9hRFBNSGhYQ2N3eHhfSzdGWUN5b1pSSkdfRlpxT2RLel9PcEd5cFh0S0syZHl3UlNnTFg3bkFTSFFIMWJ2VXlzVmpKNUVtU0NDN0daZVpu?oc=5",
-      "source": "irannewsupdate.com",
-      "source_url": "https://irannewsupdate.com/news/human-rights/un-experts-demand-end-to-killings-of-kurdish-kolbars-and-baloch-sukhtbars/?amp",
-      "published": "2026-09-24T11:15:31Z",
-      "category": "Human Rights",
-      "query": "\"Iran human rights\"",
-      "image_url": "https://irannewsupdate.com/wp-content/uploads/2026/09/f19dc863-03be-4bae-8278-79bf835857af_690.jpg"
     },
     {
       "id": "a763a1b59bddc59f",
@@ -235,18 +247,6 @@
       "category": "Human Rights",
       "query": "\"Iran human rights\"",
       "image_url": "https://middle-east-online.com/sites/default/files/styles/social_image/public/2026-09/1988.jpg?h=cc58a6fd&itok=Dja5b2E_"
-    },
-    {
-      "id": "16a57d7d80964993",
-      "title": "What will Iran look like in one year ? Eight guesses from foreign policy experts. - washingtonsun.com",
-      "url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
-      "google_news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSjkzSDZyMDhzYWczXzBOWG0wSDFsa3ZfSlhFc1ZOOEtueWlzdUU1OUNYVi02TGR5TWtaZGRuWHY4TGM0eHk5Vmt6X0J6MldseE9ROHJzWjlBNE40RHpuR2Vsb0RXTGdsRWJWQk42S1AzeFNZY21nT1lJQlVXQ2JzVXNkaVNPM3d6Z1dBd3VFRUZWaXNDVjRJWHBmU0ZrT00zTUwzWk0yaXRocXRpcF9pOTFKV0N4bjVGdG93VWdR?oc=5",
-      "source": "washingtonsun.com",
-      "source_url": "https://www.washingtonsun.com/perspectives/what-will-iran-look-like-in-one-year-eight-guesses-from-foreign-policy-experts",
-      "published": "2026-09-23T07:57:42Z",
-      "category": "Democracy",
-      "query": "\"democratic Iran\"",
-      "image_url": "https://static.washingtonsun.com/dims4/default/c1664b7/2147483647/strip/true/crop/3447x1939+0+180/resize/1440x810!/quality/90/?url=https%3A%2F%2Fk2-prod-aji.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fec%2Fed%2F979b5ea14b8f9a8958526b82d4c8%2Firan-22187715707887.jpg"
     },
     {
       "id": "0d5f57da40320b2f",
@@ -382,10 +382,10 @@
     },
     {
       "id": "f47b4ff21e3b91fb",
-      "title": "Iran’s GDP Shrinks 10.1% in First Quarter as Oil Output and Industry Collapse - IranWire",
+      "title": "Iran’s GDP Shrinks 10.1% in First Quarter as Oil Output and Industry Collapse - iranwire.com",
       "url": "https://iranwire.com/en/news/157931-irans-gdp-shrinks-101-in-first-quarter-as-oil-output-and-industry-collapse/",
       "google_news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc0R6UzNsSWI3TzdjTmt5NHdpUVBPNkZsbm1PMmgzaFB3SEZSYnYtY2I4RDRCczZNemVWZWtfQVFQVVlEUlIyOV9VZ29uT2xXT2dOZTlXTndFQ245U1lCTWVGVERTRW1INjNOLVVscG9oTVhuSkg5eVhnVG91c3k5eUc0R3dZckswNFp5YXR1ZG9SbjZMQVVLUlMyNkQ0Z3Rqal9RYklBTGRBYzNTcTMzRQ?oc=5",
-      "source": "IranWire",
+      "source": "iranwire.com",
       "source_url": "https://iranwire.com/en/news/157931-irans-gdp-shrinks-101-in-first-quarter-as-oil-output-and-industry-collapse/",
       "published": "2026-09-22T14:32:05Z",
       "category": "Economy",
@@ -430,10 +430,10 @@
     },
     {
       "id": "d9afef5bf19cdff3",
-      "title": "Iran regime's attempt to destroy evidence of its crimes shows it fears judgment day is nigh – Struan Stevenson - scotsman.com",
+      "title": "Iran regime's attempt to destroy evidence of its crimes shows it fears judgment day is nigh – Struan Stevenson - The Scotsman",
       "url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
       "google_news_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQVdmV20wLVN5ZlZjMjljWmVfX2lnQXJWUmtndFZXSU9ZcVBXWXVPWTkzbExCMENLWVRYYUNxa0I5b1pycEx3cGNzc2VrQnp2MTVUMGVRdkMtVGgwUXV4QnhKUmR3cnFVSTYzZ2ZGamh4cmNlNy1IQ21YT1pnTFlJTERid2pNdU1NU3AyQVN0SlRZTGN0TnhlSGF6a1V2cGplS01tR3FOWFdGdmxtOUhQbDlsU1BqY0FLQ0djY3B1UTJLVWRwXzVSTVg2TTBKdnFieTdLWC10b29UbnBLQ19SSA?oc=5",
-      "source": "scotsman.com",
+      "source": "The Scotsman",
       "source_url": "https://www.scotsman.com/news/opinion/columnists/iran-regimes-attempt-to-destroy-evidence-of-its-crimes-shows-it-fears-judgment-day-is-nigh-9127003",
       "published": "2026-09-21T15:45:00Z",
       "category": "Democracy",
@@ -453,16 +453,16 @@
       "image_url": "https://thecradle-main.oss-eu-central-1.aliyuncs.com/public/articles/f61865d8-b5c3-11f1-a4e5-00163e02c055.webp"
     },
     {
-      "id": "67756a7aaa41ed3b",
-      "title": "Iran vows ‘painful’ retaliation as Trump piles on pressure ahead of UN General Assembly meeting - CNBC Africa",
-      "url": "https://www.cnbcafrica.com/2026/iran-vows-painful-retaliation-as-trump-piles-on-pressure-ahead-of-un-general-assembly-meeting",
-      "google_news_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaTZ2N3kzZXhUMnpud1AyM2cyTXlQd050aXhVMFU4VG12VDFMcG9UR2FoOG92c2RMbzBuQWFZYTlpS1JfR2VHbkVYT2t5a0pCZmNQYkZLMEJZOE9pU0JUVFZ0dVV1MUhUX0x6dTlZZTdrWFdvcFFkZ09iNl9mTE5BdDJtd2Z6MTFieDliRDEwcDRIZ2VtOEhHdENyQ1hnOUNrSHBEWGdDUzNub2NYdTFST3BoZ0JQOU1iR0pWVkVVMjFSOWc?oc=5",
-      "source": "CNBC Africa",
-      "source_url": "https://www.cnbcafrica.com/2026/iran-vows-painful-retaliation-as-trump-piles-on-pressure-ahead-of-un-general-assembly-meeting",
-      "published": "2026-09-21T13:26:51Z",
-      "category": "Economy",
-      "query": "\"Iran economy\"",
-      "image_url": "https://cdn.cnbc.africa/wp-content/uploads/2026/09/108365162-17897625102026-09-18t194849z_1464701728_rc2vlnax1dr1_rtrmadp_0_usa-trump.jpg"
+      "id": "188851f1605fc534",
+      "title": "France calls out Iran’s ‘unacceptable’ closure of language center in Tehran: ‘Unjustifiable’ - New York Post",
+      "url": "https://nypost.com/2026/09/21/world-news/france-calls-out-irans-unacceptable-language-center-closure/",
+      "google_news_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeTExRkc0U3lwempzQTkxc28wSXlubXFBXzdFY1dNbVZiMXY0Z1FrZUV3YllhR0dEOUVWRlkyVHNBNUFvcnk5N3RFdktKU256YndFZ3VWbWNPLVRnVDR1UzhEMmk1OEZ2ZkhidHBGSG8yR05ZZTB4Z1lDdE1Xd2YwdFVfcFg5MWxUdHhVb1BObmRYNTVOMW0yNGYtc0ZkbkY2Y3Rj?oc=5",
+      "source": "New York Post",
+      "source_url": "https://nypost.com/2026/09/21/world-news/france-calls-out-irans-unacceptable-language-center-closure/",
+      "published": "2026-09-21T14:22:00Z",
+      "category": "Civil Society",
+      "query": "\"Iran civil society\"",
+      "image_url": "https://nypost.com/wp-content/uploads/sites/2/2026/09/141943468.jpg?quality=75&strip=all&w=1200"
     }
   ],
   "errors": [],
