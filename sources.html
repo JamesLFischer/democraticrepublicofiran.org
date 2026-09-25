@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sources & Method — Democratic Republic of Iran</title>
-  <meta name="description" content="How the Democratic Republic of Iran news aggregator gathers and orders headlines.">
+  <meta name="description" content="How the Democratic Republic of Iran news feed gathers and orders headlines.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles-v6.css">
+  <link rel="stylesheet" href="assets/styles-v9.css">
 </head>
 <body>
   <header class="simple-header">
@@ -17,7 +17,7 @@
   </header>
   <main class="article-page wrap">
     <p class="eyebrow">SOURCES & METHOD</p>
-    <h1>How the automated news feed works.</h1>
+    <h1>How the news feed works.</h1>
     <p class="dek">The site uses Google News RSS search feeds as discovery inputs. Google News determines which publisher results appear in those feeds; this site then normalizes, de-duplicates, categorizes, and displays the returned headlines.</p>
 
     <div class="prose">
@@ -42,10 +42,29 @@
       <p>A GitHub Actions workflow runs on a schedule and can also be run manually. It updates <code>data/news.json</code>, commits only when the feed changes, and lets GitHub Pages redeploy the static site.</p>
 
       <h2>Source caution</h2>
-      <p>Aggregation is not verification. Headlines can contain disputed claims, analysis, or opinion. Readers should open the original article, consider the publisher, and compare reporting across sources.</p>
+      <p>Headlines can contain disputed claims, analysis, or opinion. Readers should open the original article, consider the publisher, and compare reporting across sources.</p>
     </div>
   </main>
-  <footer class="footer"><div class="wrap footer-grid"><div><div class="footer-brand">DEMOCRATIC REPUBLIC OF IRAN</div></div><div><a href="index.html">News</a><a href="about.html">About</a></div><p class="copyright">© <span id="year"></span> Democratic Republic of Iran.</p></div></footer>
+  <footer class="footer">
+    <div class="wrap footer-grid footer-collaboration">
+      <div class="collaboration-copy">
+        <div class="footer-brand">DEMOCRATIC REPUBLIC OF IRAN</div>
+        <p>Democratic Republic of Iran is a collaboration for a free Iran between:</p>
+        <ul class="collaboration-list">
+          <li>Iran National Council (INC)</li>
+          <li>National Union for Democracy in Iran (NUFDI)</li>
+          <li>Iran Prosperity Project</li>
+          <li>Reza Pahlavi</li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="sources.html">Sources & Method</a>
+        <a href="https://rezapahlavi.org/en" target="_blank" rel="noopener noreferrer">Reza Pahlavi</a>
+      </div>
+      <p class="footer-disclaimer">© <span id="year"></span> Democratic Republic of Iran. Third-party headlines and publisher imagery remain the property of their respective publishers.</p>
+    </div>
+  </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>

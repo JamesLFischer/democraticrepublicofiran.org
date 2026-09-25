@@ -10,20 +10,40 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://democraticrepublicofiran.org/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles-v6.css">
+  <link rel="stylesheet" href="assets/styles-v9.css">
 </head>
 <body>
   <header class="site-header">
     <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="utility-bar wrap">
-      <p>Independent Iran News Desk</p>
+      <p>Democratic Republic of Iran</p>
       <div class="utility-links">
         <a href="about.html">About</a>
         <a href="sources.html">Sources & Method</a>
       </div>
     </div>
 
-    <div class="masthead wrap iran-masthead">
+
+    <section class="leadership-hero" aria-label="Democratic Republic of Iran">
+      <img
+        class="leadership-hero-image"
+        src="https://i.ytimg.com/vi/ItUyR7NvcmA/maxresdefault.jpg"
+        alt="Reza Pahlavi"
+      >
+      <div class="leadership-hero-shade" aria-hidden="true"></div>
+      <div class="wrap leadership-hero-inner">
+        <a class="hero-brand" href="index.html" aria-label="Democratic Republic of Iran home">
+          <span class="hero-kicker">THE</span>
+          <span class="hero-title">DEMOCRATIC REPUBLIC</span>
+          <span class="hero-title hero-title-small">OF IRAN</span>
+        </a>
+        <a class="hero-video-jump" href="#featured-video" aria-label="Watch featured video">
+          <span>▶</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="masthead wrap iran-masthead home-masthead">
       <a class="brand" href="index.html" aria-label="Democratic Republic of Iran home">
         <span class="brand-kicker">THE</span>
         <span class="brand-title">DEMOCRATIC REPUBLIC</span>
@@ -57,6 +77,27 @@
   </header>
 
   <main>
+
+    <section class="featured-video-section" id="featured-video">
+      <div class="wrap featured-video-grid">
+        <div class="featured-video-copy">
+          <p class="eyebrow">FEATURED VIDEO</p>
+          <h2>Reza Pahlavi</h2>
+          <p>Featured video from Reza Pahlavi's official website.</p>
+          <a href="https://rezapahlavi.org/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ItUyR7NvcmA?rel=0"
+            title="Featured Reza Pahlavi video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <section class="section intro wrap">
       <div>
         <p class="eyebrow">CONTINUOUSLY UPDATED</p>
@@ -106,10 +147,7 @@
           <p class="eyebrow light">THE IRAN DESK</p>
           <h2>Independent. Focused. Iran.</h2>
         </div>
-        <p>
-          Following the stories shaping Iran and its global community — from public life and the economy
-          to culture, civil society, and the Iranian diaspora.
-        </p>
+        <p class="founder-statement">The Democratic Republic of Iran is the brain child of Phil Anderson and Reza Pahlavi.</p>
         <a class="text-link light-link" href="about.html">About the publication →</a>
       </div>
     </section>
@@ -117,16 +155,23 @@
 </main>
 
   <footer class="footer">
-    <div class="wrap footer-grid">
-      <div>
+    <div class="wrap footer-grid footer-collaboration">
+      <div class="collaboration-copy">
         <div class="footer-brand">DEMOCRATIC REPUBLIC OF IRAN</div>
-        <p>Independent, unaffiliated coverage focused on Iran and its global community.</p>
+        <p>Democratic Republic of Iran is a collaboration for a free Iran between:</p>
+        <ul class="collaboration-list">
+          <li>Iran National Council (INC)</li>
+          <li>National Union for Democracy in Iran (NUFDI)</li>
+          <li>Iran Prosperity Project</li>
+          <li>Reza Pahlavi</li>
+        </ul>
       </div>
-      <div>
+      <div class="footer-nav">
         <a href="about.html">About</a>
         <a href="sources.html">Sources & Method</a>
+        <a href="https://rezapahlavi.org/en" target="_blank" rel="noopener noreferrer">Reza Pahlavi</a>
       </div>
-      <p class="copyright">© <span id="year"></span> Democratic Republic of Iran. Third-party headlines remain the property of their respective publishers.</p>
+      <p class="footer-disclaimer">© <span id="year"></span> Democratic Republic of Iran. Third-party headlines and publisher imagery remain the property of their respective publishers.</p>
     </div>
   </footer>
 
