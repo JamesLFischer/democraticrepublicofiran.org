@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Democratic Republic of Iran — Iran News & Media</title>
+  <meta name="description" content="Independent, source-attributed coverage focused on Iran, its people, and its global community.">
+  <meta property="og:title" content="Democratic Republic of Iran">
+  <meta property="og:description" content="Independent coverage focused on Iran and its global community.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://democraticrepublicofiran.org/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles-v12.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <nav class="primary-nav">
+      <div class="wrap nav-inner">
+        <button class="nav-link active" data-category="All">Latest</button>
+        <button class="nav-link" data-category="Democracy">Democracy</button>
+        <button class="nav-link" data-category="Civil Society">Civil Society</button>
+        <button class="nav-link" data-category="Human Rights">Human Rights</button>
+        <button class="nav-link" data-category="Economy">Economy</button>
+        <button class="nav-link" data-category="Culture">Culture</button>
+        <button class="nav-link" data-category="Diaspora">Diaspora</button>
+        <button class="search-toggle" id="searchToggle" aria-label="Search stories">⌕</button>
+      </div>
+    </nav>
+
+    <div class="search-panel" id="searchPanel" hidden>
+      <div class="wrap">
+        <label for="storySearch">Search coverage</label>
+        <input id="storySearch" type="search" placeholder="Search Iran coverage…" autocomplete="off">
+      </div>
+    </div>
+
+    <section class="video-hero" aria-label="Democratic Republic of Iran featured video">
+      <div class="wrap video-hero-grid">
+        <div class="video-hero-copy">
+          <span class="video-hero-kicker">THE</span>
+          <h1 class="video-hero-title">
+            <span>DEMOCRATIC</span>
+            <span>REPUBLIC</span>
+            <span>OF IRAN</span>
+          </h1>
+          <div class="video-hero-rule" aria-hidden="true"></div>
+          <p class="video-hero-label">FEATURED VIDEO</p>
+          <p class="video-hero-person">Reza Pahlavi</p>
+          <p class="video-hero-description">Featured video from Reza Pahlavi's official website.</p>
+          <a class="video-hero-link" href="https://rezapahlavi.org/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+        </div>
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ItUyR7NvcmA?rel=0"
+            title="Featured Reza Pahlavi video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+<section class="section intro wrap">
+      <div>
+        <p class="eyebrow">CONTINUOUSLY UPDATED</p>
+        <h1>Iran, in focus.</h1>
+      </div>
+      <p class="intro-copy">
+        A focused view of the reporting shaping Iran — politics, public life, culture, the economy,
+        civil society, and the Iranian diaspora.
+      </p>
+    </section>
+
+    <section class="wrap status-row" aria-live="polite">
+      <span id="feedStatus">Loading the latest feed…</span>
+      <span id="lastUpdated"></span>
+    </section>
+
+    <section class="wrap lead-layout" id="leadLayout">
+      <article class="lead-card skeleton">
+        <div class="visual"></div>
+        <div class="copy">
+          <span class="tag">LATEST</span>
+          <h2>Loading current Iran coverage…</h2>
+          <p class="meta">The automated feed will appear here after its first update.</p>
+        </div>
+      </article>
+      <div class="side-stack" id="sideStack"></div>
+    </section>
+
+    <section class="wrap section-divider">
+      <div>
+        <p class="eyebrow">LATEST COVERAGE</p>
+        <h2 id="sectionTitle">All stories</h2>
+      </div>
+      <p id="resultsCount"></p>
+    </section>
+
+    <section class="wrap card-grid" id="newsGrid"></section>
+
+    <section class="wrap empty-state" id="emptyState" hidden>
+      <p class="eyebrow">FEED RECOVERY IN PROGRESS</p>
+      <h2>The current news feed is being rebuilt.</h2>
+      <p>Stories return after the updater confirms their publisher imagery.</p>
+    </section>
+    <section class="method-strip newsroom-strip">
+      <div class="wrap method-grid">
+        <div>
+          <p class="eyebrow light">THE IRAN DESK</p>
+          <h2>Independent. Focused. Iran.</h2>
+        </div>
+        <p class="founder-statement">The Democratic Republic of Iran is the brain child of Phil Anderson and Reza Pahlavi.</p>
+        <a class="text-link light-link" href="about.html">About the publication →</a>
+      </div>
+    </section>
+
+</main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid footer-collaboration">
+      <div class="collaboration-copy">
+        <div class="footer-brand">DEMOCRATIC REPUBLIC OF IRAN</div>
+        <p>Democratic Republic of Iran is a collaboration for a free Iran between:</p>
+        <ul class="collaboration-list">
+          <li>The Trump Administration</li>
+          <li>Iran National Council (INC)</li>
+          <li>National Union for Democracy in Iran (NUFDI)</li>
+          <li>Iran Prosperity Project</li>
+          <li>Reza Pahlavi</li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="sources.html">Sources & Method</a>
+        <a href="https://rezapahlavi.org/en" target="_blank" rel="noopener noreferrer">Reza Pahlavi</a>
+      </div>
+      <p class="footer-disclaimer">© <span id="year"></span> Democratic Republic of Iran. Third-party headlines and publisher imagery remain the property of their respective publishers.</p>
+    </div>
+  </footer>
+
+  <script src="assets/app-v6.js" defer></script>
+</body>
+</html>
